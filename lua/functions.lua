@@ -22,15 +22,27 @@ end
 function set_theme (theme)
     theme.command()
     write_theme(theme.id)
-    -- info('Theme set to ' .. theme.name)
+    info('Theme set to ' .. theme.name)
+end
+
+function random_theme (themes, amount)
+    math.randomseed(os.time())
+    local random = math.random(amount)
+
+    local i = 1
+    for _, theme in pairs(themes) do
+        if i > amount then return end
+
+        if i == random then
+            return theme
+        else
+            i = i + 1
+        end
+    end
 end
 
 function warn(msg, name)
     notify(msg, vim.log.levels.WARN, { title = name })
-end
-
-function error(msg, name)
-    notify(msg, vim.log.levels.ERROR, { title = name})
 end
 
 function info(msg, name)

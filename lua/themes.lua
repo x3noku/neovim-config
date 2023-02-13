@@ -2,18 +2,6 @@ themes = {}
 
 
 -- light themes
-themes.everforest_light = {
-    name = 'Everforest Light',
-    id = 'everforest_light',
-    mode = 'light',
-    command = function ()
-        opt.background = 'light'
-        g.everforest_background = 'medium'        -- hard, medium, soft
-        g.everforest_better_performance = 1
-        cmd [[colorscheme everforest]]
-    end
-}
-
 themes.vim_material_light = {
     name = 'Vim Material Light',
     id = 'vim_material_light',
@@ -21,16 +9,6 @@ themes.vim_material_light = {
     command = function ()
         opt.background = 'light'
         cmd [[colorscheme vim-material]]
-    end
-}
-
-themes.sobrio_light = {
-    name = 'Sobrio Light',
-    id = 'sobrio_light',
-    mode = 'light',
-    command = function ()
-        opt.background = 'light'
-        cmd [[colorscheme sobrio_light]]
     end
 }
 
@@ -53,26 +31,6 @@ themes.vim_material_dark = {
     command = function ()
         opt.background = 'dark'
         cmd [[colorscheme vim-material]]
-    end
-}
-
-themes.sobrio_dark = {
-    name = 'Sobrio Dark',
-    id = 'sobrio_dark',
-    mode = 'dark',
-    command = function ()
-        opt.background = 'dark'
-        cmd [[colorscheme sobrio]]
-    end
-}
-
-themes.sobrio_verde_dark = {
-    name = 'Sobrio Verde Dark',
-    id = 'sobrio_verde_dark',
-    mode = 'dark',
-    command = function ()
-        opt.background = 'dark'
-        cmd [[colorscheme sobrio_verde]]
     end
 }
 
@@ -121,6 +79,45 @@ themes.catppuccin_mocha = {
     end
 }
 
+themes.janah = {
+    name = 'Janah',
+    id = 'janah',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme janah]]
+    end
+}
+
+themes.moriarty = {
+    name = 'Moriarty',
+    id = 'moriarty',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme moriarty]]
+    end
+}
+
+themes.eva01 = {
+    name = 'Eva 01',
+    id = 'eva01',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme eva01]]
+    end
+}
+
+themes.eva01lcl = {
+    name = 'Eva 01 LCL',
+    id = 'eva01lcl',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme eva01-LCL]]
+    end
+}
 
 
 -- theme map
@@ -131,13 +128,20 @@ thememap = {
 }
 
 local i = 1
+local light_themes = {}
+local dark_themes = {}
+local amount_light = 0
+local amount_dark = 0
 
-thememap[binds:sub(i, i)] = { function () end, 'LIGHT THEMES' }
+thememap[binds:sub(i, i)] = { function () set_theme(random_theme(light_themes, amount_light)) end, 'LIGHT THEMES' }
 i = i + 1
 
 for _, theme in pairs(themes) do
 	if theme.mode == 'light' then
 		thememap[binds:sub(i, i)] = { function () set_theme(theme) end, theme.name }
+        light_themes[amount_light] = theme
+
+        amount_light = amount_light + 1
 		i = i + 1
 	end
 end
@@ -147,12 +151,15 @@ while i % 4 ~= 1 do
 	i = i + 1
 end
 
-thememap[binds:sub(i, i)] = { function () end, 'DARK THEMES' }
+thememap[binds:sub(i, i)] = { function () set_theme(random_theme(dark_themes, amount_dark)) end, 'DARK THEMES' }
 i = i + 1
 
 for _, theme in pairs(themes) do
 	if theme.mode == 'dark' then
 		thememap[binds:sub(i, i)] = { function () set_theme(theme) end, theme.name }
+        dark_themes[amount_dark] = theme
+
+        amount_dark = amount_dark + 1
 		i = i + 1
 	end
 end

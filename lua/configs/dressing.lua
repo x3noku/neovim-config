@@ -5,7 +5,7 @@ return {
         prompt_align = 'left',
         insert_only = true,
         start_in_insert = true,
-        anchor = 'NW',
+        anchor = 'SW',
         border = 'rounded',
         relative = 'cursor',
         prefer_width = 40,
@@ -55,7 +55,7 @@ return {
             min_height = 10,
         },
         builtin = {
-            anchor = 'NW',
+            anchor = 'SW',
             border = 'rounded',
             relative = 'editor',
             buf_options = {},

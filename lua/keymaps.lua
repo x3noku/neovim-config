@@ -51,6 +51,8 @@ map('n', 'K', function () lsp.buf.hover() end, {})
 -- todo: add binding for trouble list
 -- todo: add bindig for diagnostig jump on ]d [d
 -- todo: add bindings for auto commas etc
+-- todo: add binding to clear selection
+-- todo: add bindings to move buffers
 
 
 -- finder

@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
     use 'folke/which-key.nvim' -- keymap checker
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = 'nvim-lua/plenary.nvim' } -- fuzzy
     use { 'folke/trouble.nvim', requires = 'nvim-tree/nvim-web-devicons' } -- pretty list of diagnostics
+    -- todo: replace with utilyre/barbecue.nvim
     use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' } -- current code context
     use { -- file tree
         'nvim-neo-tree/neo-tree.nvim',
@@ -93,12 +94,13 @@ return require('packer').startup(function(use)
 
 
     -- color schemes
-	use 'sainnhe/everforest'
+    use { 'catppuccin/nvim', as = 'catppuccin' }
 	use 'hzchirs/vim-material'
-	use 'elvessousa/sobrio'
 	use 'thedenisnikulin/vim-cyberpunk'
 	use 'sainnhe/sonokai'
-    use { 'catppuccin/nvim', as = 'catppuccin' }
+    use 'mhinz/vim-janah'
+    use 'aliou/moriarty.vim'
+    use 'hachy/eva01.vim'
 
 
     -- Automatically set up your configuration after cloning packer.nvim
