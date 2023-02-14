@@ -22,6 +22,16 @@ themes.catppuccin_latte = {
     end
 }
 
+themes.oxocarbon_light = {
+    name = 'Oxocarbon Light',
+    id = 'oxocarbon_light',
+    mode = 'light',
+    command = function ()
+        opt.background = 'light'
+        cmd [[colorscheme oxocarbon]]
+    end
+}
+
 
 -- dark themes
 themes.vim_material_dark = {
@@ -118,6 +128,27 @@ themes.eva01lcl = {
         cmd [[colorscheme eva01-LCL]]
     end
 }
+
+themes.oxocarbon_dark = {
+    name = 'Oxocarbon Dark',
+    id = 'oxocarbon_dark',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme oxocarbon]]
+    end
+}
+
+themes.snazzy = {
+    name = 'Snazzy',
+    id = 'snazzy',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme snazzy]]
+    end
+}
+
 
 
 -- theme map
