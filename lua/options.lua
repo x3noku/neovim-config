@@ -30,12 +30,22 @@ cmd [[set noshowmode]] -- disable standart mode display
 cmd [[set clipboard=unnamedplus]] -- system clipboard
 
 
--- autocomplete
+-- lsp
 require('mason').setup(require('configs.mason'))
 require('mason-lspconfig').setup(require('configs.mason-lspconfig'))
-require('cmp').setup(require('configs.cmp'))
 require('configs.lspconfig')
+
+
+-- autocomplete
+require('cmp').setup(require('configs.cmp'))
+
+
+-- linting and formatting
 require('null-ls').setup(require('configs.null-ls'))
+
+
+-- snippets
+require('cmp_nvim_ultisnips').setup({})
 
 
 -- git

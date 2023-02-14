@@ -2,7 +2,11 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 
 return {
-    snippet = {},
+    snippet = {
+        expand = function(args)
+            fn['UltiSnips#Anon'](args.body)
+        end,
+    },
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -29,11 +33,11 @@ return {
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
     }),
     sources = {
-        { name = 'nvim_lsp' }, -- For nvim-lsp
-        { name = 'ultisnips' }, -- For ultisnips user.
-        { name = 'path' }, -- for path completion
-        { name = 'buffer', keyword_length = 2 }, -- for buffer word completion
-        { name = 'emoji', insert = true }, -- emoji completion
+        { name = 'nvim_lsp' },
+        { name = 'ultisnips' },
+        { name = 'path' },
+        { name = 'buffer', keyword_length = 2 },
+        { name = 'emoji', insert = true },
     },
     completion = {
         keyword_length = 1,
