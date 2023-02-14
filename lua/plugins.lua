@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
+    use 'lervag/vimtex'
 
 
     -- autocomplete
@@ -48,6 +49,7 @@ return require('packer').startup(function(use)
     -- snippets
     use 'SirVer/ultisnips'
     use 'quangnguyen30192/cmp-nvim-ultisnips'
+    use 'reconquest/vim-pythonx' -- easier funcitons for snippets
 
 
     -- git

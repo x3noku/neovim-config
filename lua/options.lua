@@ -74,13 +74,17 @@ require('Comment').setup(require('configs.Comment'))
 require('presence').setup(require('configs.presence'))
 
 
+-- UltiSnips
+g.UltiSnipsSnippetDirectories = { 'config/snippets/' }
+
+
 -- todo: latex config
--- g.tex_flavor='latex'
--- g.vimtex_view_method='zathura'
--- g.vimtex_compiler_method = 'latexrun'
--- g.vimtex_compiler_latexrun = { build_dir = 'build' }
--- g.vimtex_indent_enabled = true
--- g.vimtex_syntax_enabled = true
--- g.vimtex_quickfix_mode = false
--- g.tex_conceal='abdmg'
--- cmd 'set conceallevel=1'
+g.tex_flavor='latex'
+g.vimtex_view_method='zathura'
+g.vimtex_compiler_method = 'latexrun'
+g.vimtex_compiler_latexrun = { build_dir = 'build' }
+g.vimtex_indent_enabled = true
+g.vimtex_syntax_enabled = true
+g.vimtex_quickfix_mode = false
+g.tex_conceal='abdmg'
+cmd 'set conceallevel=1'

@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{report}
+
+
+
+% Math support
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+% Enhanced support for images
+\usepackage{graphicx}
+% Improved interface for floating objects
+\usepackage{float}
+% Publication quality tables
+\usepackage{booktabs}
+% Driver-independent color extensions
+\usepackage{xcolor}
+% Customize document dimensions
+\usepackage{geometry}
+% all 4 margins to be either 1 inch or 1.5 cm
+\usepackage{fullpage}
+% Control of page headers and footers
+\usepackage{fancyhdr}
+% Languages
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+% Spacing
+\usepackage{setspace}
+
+
+
+ % Page settings
+\topmargin=-0.45in
+\headsep=0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\linespread{1.1}
+\setlength\parindent{0pt}
+
+\pagestyle{fancy}
+\chead{\courseName}
+\cfoot{\thepage}
+
+
+
+% Commands and Binds
+\newcommand{\titlePage}{
+    \begin{titlepage}
+        \center
+
+        \universityLogo\\[1cm]
+	
+        \begin{spacing}{1.5}
+            \textsc{\LARGE \universityName} \\[1.5cm] 
+        \end{spacing}
+
+        \textsc{\Large \programmeName} \\[0.5cm]
+
+        \textsc{\large \termName} \\[0.5cm]
+
+        \HRule \\[0.4cm]
+            \begin{spacing}{1.6}
+                { \huge \bfseries \courseName} \\[0.2cm]
+            \end{spacing}
+        \HRule \\[1.5cm]
+ 
+
+        \begin{minipage}{0.4\textwidth}
+            \begin{flushleft} \large
+                \emph{Автор:} \\
+                \studentName
+            \end{flushleft}
+        \end{minipage}
+        ~
+        \begin{minipage}{0.4\textwidth}
+            \begin{flushright} \large
+                \emph{Преподаватель:} \\
+                \lecturerName
+            \end{flushright}
+        \end{minipage} \\[2cm]
+        
+
+        \vfill
+        {\large \today} \\[2cm]
+    \end{titlepage}
+}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\theorem}[1]{\textbf{\large{Теорема #1}}\\}
+\newcommand{\prove}{\textbf{\large{Доказательство}}\\}
+\newcommand{\solution}{\textbf{\large{Решение}}\\}
+\newcommand{\define}{\textbf{\large{Определение}}\\}
+\newcommand{\question }{\textbf{Вопрос:}}
+\newcommand{\answer}{\textbf{Ответ:}}
+
+\newcommand{\universityLogo}{\includegraphics[scale=0.5] {~/Pictures/mirea-logo-solid.png}}
+% \newcommand{\universityLogo}{\includegraphics[scale=0.25] {~/Pictures/mirea-logo-outline.png}}
+\newcommand{\universityName}{МИРЭА - Российский Технологический Университет}
+\newcommand{\programmeName}{Прикладная Математика и Информатика}
+\newcommand{\studentName}{Кайков Артем}
+\newcommand{\lecturerName}{Фамилия Имя Отчество}
+\newcommand{\courseName}{Название предмета}
+\newcommand{\termName}{ семестр}
+
+
+
+% Contents
+\begin{document}
+\titlePage
+
+\chapter{Какая-то глава}
+
+\section*{Секция}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
