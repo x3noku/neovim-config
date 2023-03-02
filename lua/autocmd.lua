@@ -4,6 +4,11 @@ api.nvim_create_autocmd(
 )
 
 api.nvim_create_autocmd(
+    'VimLeave',
+    { command = '!eslint_d stop' }
+)
+
+api.nvim_create_autocmd(
     { 'BufWritePost', 'FileType' },
     { pattern = '*.tex', command = 'VimtexCompile' }
 )

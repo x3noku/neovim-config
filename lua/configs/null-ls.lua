@@ -4,6 +4,7 @@ return {
     sources = {
         builtins.diagnostics.eslint_d,
         builtins.formatting.eslint_d,
+        builtins.formatting.fixjson,
     },
     on_attach = function(client, bufnr)
         if client.supports_method('textDocument/formatting') then

@@ -25,6 +25,7 @@ wo.list = false  -- hide special symbols
 
 
 -- other
+g.indentLine_setConceal = 0 -- disable json conceal
 opt.encoding = 'UTF-8' -- encoding
 cmd [[set noshowmode]] -- disable standart mode display
 cmd [[set clipboard=unnamedplus]] -- system clipboard

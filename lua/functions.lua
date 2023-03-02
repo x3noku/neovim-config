@@ -1,6 +1,5 @@
 -- color schemes
 local function write_theme (id)
-    -- todo: create folder if not
     local file = io.open(os.getenv('HOME') .. '/.config/nvim/config/theme', 'w')
     file:write(id)
     return file:close()
