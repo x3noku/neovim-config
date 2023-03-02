@@ -25,7 +25,32 @@ return {
                 end
 
                 if tree_open then
-                    table.insert(result, { text = '|              Nvim Tree               |' })
+                    local absoulute = fn.expand('%:p')
+                    local relative = string.gsub('/' .. fn.expand('%:.'), '%A', '.')
+
+                    local name = string.gsub(absoulute, relative, '')
+                    local path = string.match(name, '.+/')
+                    if path ~= nil then
+                        name = string.gsub(name, path, '')
+                    else
+                        name = ''
+                    end
+
+                    local fill = 40 - #name
+                    local fill_left = math.floor(fill / 2)
+                    local fill_right = fill - fill_left
+
+                    for i = 1, fill_left - 1 do
+                        name = ' ' .. name
+                    end
+                    name = '|' .. name
+
+                    for i = 1, fill_right - 1 do
+                        name = name .. ' '
+                    end
+                    name = name .. '|'
+
+                    table.insert(result, { text = name })
                 end
 
                 return result

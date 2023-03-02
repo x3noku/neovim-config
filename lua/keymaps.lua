@@ -15,6 +15,8 @@ map('', '<C-k>', 'gk', {})
 map('n', '<C-n>', function () cmd [[NeoTreeFocusToggle]]  end, {})
 map('n', '<S-h>', function () cmd [[BufferLineCyclePrev]] end, {})
 map('n', '<S-l>', function () cmd [[BufferLineCycleNext]] end, {})
+map('n', '{', function () cmd [[BufferLineMovePrev]] end, {})
+map('n', '}', function () cmd [[BufferLineMoveNext]] end, {})
 map('n', '<S-b>', function () cmd [[Bdelete]] end, {})
 
 
