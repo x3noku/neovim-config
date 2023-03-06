@@ -30,6 +30,15 @@ opt.encoding = 'UTF-8' -- encoding
 cmd [[set noshowmode]] -- disable standart mode display
 cmd [[set clipboard=unnamedplus]] -- system clipboard
 
+-- neovide
+if g.neovide then
+    o.guifont = 'JetBrains Mono:h12'
+    g.neovide_hide_mouse_when_typing = true
+    g.neovide_cursor_vfx_mode = 'pixiedust'
+    -- g.neovide_fullscreen = true
+    -- g.neovide_profiler = true
+end
+
 
 -- lsp
 require('mason').setup(require('configs.mason'))
@@ -72,6 +81,7 @@ require('neo-tree').setup(require('configs.neo-tree'))
 -- utils
 require('nvim-autopairs').setup()
 require('Comment').setup(require('configs.Comment'))
+require('indent-o-matic').setup(require('configs.indent-o-matic'))
 require('presence').setup(require('configs.presence'))
 
 
