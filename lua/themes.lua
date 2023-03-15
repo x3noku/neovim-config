@@ -22,13 +22,13 @@ themes.catppuccin_latte = {
     end
 }
 
-themes.oxocarbon_light = {
-    name = 'Oxocarbon Light',
-    id = 'oxocarbon_light',
+themes.kangawa_lotus = {
+    name = 'Kanagawa Lotus',
+    id = 'kangawa_lotus',
     mode = 'light',
     command = function ()
         opt.background = 'light'
-        cmd [[colorscheme oxocarbon]]
+        cmd [[colorscheme kanagawa-lotus]]
     end
 }
 
@@ -99,16 +99,6 @@ themes.janah = {
     end
 }
 
-themes.moriarty = {
-    name = 'Moriarty',
-    id = 'moriarty',
-    mode = 'dark',
-    command = function ()
-        opt.background = 'dark'
-        cmd [[colorscheme moriarty]]
-    end
-}
-
 themes.eva01 = {
     name = 'Eva 01',
     id = 'eva01',
@@ -129,16 +119,6 @@ themes.eva01lcl = {
     end
 }
 
-themes.oxocarbon_dark = {
-    name = 'Oxocarbon Dark',
-    id = 'oxocarbon_dark',
-    mode = 'dark',
-    command = function ()
-        opt.background = 'dark'
-        cmd [[colorscheme oxocarbon]]
-    end
-}
-
 themes.snazzy = {
     name = 'Snazzy',
     id = 'snazzy',
@@ -148,7 +128,25 @@ themes.snazzy = {
         cmd [[colorscheme snazzy]]
     end
 }
+themes.kangawa_wave = {
+    name = 'Kanagawa Wave',
+    id = 'kangawa_wave',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme kanagawa-wave]]
+    end
+}
 
+themes.kangawa_dragon = {
+    name = 'Kanagawa Dragon',
+    id = 'kangawa_dragon',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme kanagawa-dragon]]
+    end
+}
 
 
 -- theme map

@@ -1,4 +1,4 @@
-g.mapleader = '/' -- leader key
+g.mapleader = ' ' -- leader key
 
 
 -- navigation bindings

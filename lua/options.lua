@@ -98,4 +98,4 @@ g.vimtex_indent_enabled = true
 g.vimtex_syntax_enabled = true
 g.vimtex_quickfix_mode = false
 g.tex_conceal='abdmg'
-cmd 'set conceallevel=1'
+cmd [[set conceallevel=1]]
