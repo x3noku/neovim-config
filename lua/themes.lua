@@ -2,7 +2,7 @@ themes = {}
 
 
 -- light themes
-themes.vim_material_light = {
+themes[#themes + 1] = {
     name = 'Vim Material Light',
     id = 'vim_material_light',
     mode = 'light',
@@ -12,7 +12,7 @@ themes.vim_material_light = {
     end
 }
 
-themes.catppuccin_latte = {
+themes[#themes + 1] = {
     name = 'Catppuccin Latte',
     id = 'catppuccin_latte',
     mode = 'light',
@@ -22,7 +22,7 @@ themes.catppuccin_latte = {
     end
 }
 
-themes.kangawa_lotus = {
+themes[#themes + 1] = {
     name = 'Kanagawa Lotus',
     id = 'kangawa_lotus',
     mode = 'light',
@@ -34,17 +34,7 @@ themes.kangawa_lotus = {
 
 
 -- dark themes
-themes.vim_material_dark = {
-    name = 'Vim Material Dark',
-    id = 'vim_material_dark',
-    mode = 'dark',
-    command = function ()
-        opt.background = 'dark'
-        cmd [[colorscheme vim-material]]
-    end
-}
-
-themes.sonokai_andromeda = {
+themes[#themes + 1] = {
 	name = 'Sonokai Andromeda',
 	id = 'sonokai_andromeda',
 	mode = 'dark',
@@ -56,7 +46,7 @@ themes.sonokai_andromeda = {
 	end
 }
 
-themes.sonokai_shusia = {
+themes[#themes + 1] = {
 	name = 'Sonokai Shusia',
 	id = 'sonokai_shusia',
 	mode = 'dark',
@@ -68,7 +58,7 @@ themes.sonokai_shusia = {
 	end
 }
 
-themes.cyberpunk = {
+themes[#themes + 1] = {
     name = 'Cyberpunk',
     id = 'cyberpunk',
     mode = 'dark',
@@ -79,7 +69,7 @@ themes.cyberpunk = {
     end
 }
 
-themes.catppuccin_mocha = {
+themes[#themes + 1] = {
     name = 'Catppuccin Mocha',
     id = 'catppuccin_mocha',
     mode = 'dark',
@@ -89,7 +79,7 @@ themes.catppuccin_mocha = {
     end
 }
 
-themes.janah = {
+themes[#themes + 1] = {
     name = 'Janah',
     id = 'janah',
     mode = 'dark',
@@ -99,7 +89,7 @@ themes.janah = {
     end
 }
 
-themes.eva01 = {
+themes[#themes + 1] = {
     name = 'Eva 01',
     id = 'eva01',
     mode = 'dark',
@@ -109,7 +99,7 @@ themes.eva01 = {
     end
 }
 
-themes.eva01lcl = {
+themes[#themes + 1] = {
     name = 'Eva 01 LCL',
     id = 'eva01lcl',
     mode = 'dark',
@@ -119,7 +109,7 @@ themes.eva01lcl = {
     end
 }
 
-themes.snazzy = {
+themes[#themes + 1] = {
     name = 'Snazzy',
     id = 'snazzy',
     mode = 'dark',
@@ -128,7 +118,8 @@ themes.snazzy = {
         cmd [[colorscheme snazzy]]
     end
 }
-themes.kangawa_wave = {
+
+themes[#themes + 1] = {
     name = 'Kanagawa Wave',
     id = 'kangawa_wave',
     mode = 'dark',
@@ -138,7 +129,7 @@ themes.kangawa_wave = {
     end
 }
 
-themes.kangawa_dragon = {
+themes[#themes + 1] = {
     name = 'Kanagawa Dragon',
     id = 'kangawa_dragon',
     mode = 'dark',
@@ -159,18 +150,15 @@ thememap = {
 local i = 1
 local light_themes = {}
 local dark_themes = {}
-local amount_light = 0
-local amount_dark = 0
 
-thememap[binds:sub(i, i)] = { function () set_theme(random_theme(light_themes, amount_light)) end, 'LIGHT THEMES' }
+thememap[binds:sub(i, i)] = { function () set_theme(random_theme(light_themes, #light_themes)) end, 'LIGHT THEMES' }
 i = i + 1
 
 for _, theme in pairs(themes) do
 	if theme.mode == 'light' then
 		thememap[binds:sub(i, i)] = { function () set_theme(theme) end, theme.name }
-        light_themes[amount_light] = theme
+        light_themes[#light_themes + 1] = theme
 
-        amount_light = amount_light + 1
 		i = i + 1
 	end
 end
@@ -180,15 +168,14 @@ while i % 4 ~= 1 do
 	i = i + 1
 end
 
-thememap[binds:sub(i, i)] = { function () set_theme(random_theme(dark_themes, amount_dark)) end, 'DARK THEMES' }
+thememap[binds:sub(i, i)] = { function () set_theme(random_theme(dark_themes, #dark_themes)) end, 'DARK THEMES' }
 i = i + 1
 
 for _, theme in pairs(themes) do
 	if theme.mode == 'dark' then
 		thememap[binds:sub(i, i)] = { function () set_theme(theme) end, theme.name }
-        dark_themes[amount_dark] = theme
+        dark_themes[#dark_themes + 1] = theme
 
-        amount_dark = amount_dark + 1
 		i = i + 1
 	end
 end

@@ -10,12 +10,15 @@ function read_theme ()
     if file then
         local id = file:read()
         file:close()
-	if themes[id] ~= nil then
-		return themes[id]
-	end
+        
+        for _, theme in pairs(themes) do
+            if theme.id == id then
+                return theme
+            end
+        end
     end
 
-    return themes.vim_material_dark
+    return themes[#themes]
 end
 
 function set_theme (theme)
