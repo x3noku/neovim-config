@@ -1,8 +1,8 @@
 local ensure_packer = function()
     local path = '~/.local/share/nvim/site/pack/packer/start/packer.nvim'
 
-    if fn.empty(fn.glob(path)) > 0 then
-        fn.system({
+    if vim.fn.empty(vim.fn.glob(path)) > 0 then
+        vim.fn.system({
             'git',
             'clone',
             '--depth',
@@ -10,7 +10,7 @@ local ensure_packer = function()
             'https://github.com/wbthomason/packer.nvim',
             path
         })
-        cmd [[packadd packer.nvim]]
+        vim.cmd [[packadd packer.nvim]]
 
         return true
     end
@@ -115,6 +115,7 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-janah'
     use 'hachy/eva01.vim'
     use 'rebelot/kanagawa.nvim'
+    use 'lunarvim/horizon.nvim'
 
 
     -- Automatically set up your configuration after cloning packer.nvim

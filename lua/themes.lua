@@ -139,6 +139,16 @@ themes[#themes + 1] = {
     end
 }
 
+themes[#themes + 1] = {
+    name = 'Horizon',
+    id = 'horizon',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme horizon]]
+    end
+}
+
 
 -- theme map
 local binds = '123456789abcdefghijklmnopqrstuvwxyz'
