@@ -3,16 +3,6 @@ themes = {}
 
 -- light themes
 themes[#themes + 1] = {
-    name = 'Vim Material Light',
-    id = 'vim_material_light',
-    mode = 'light',
-    command = function ()
-        opt.background = 'light'
-        cmd [[colorscheme vim-material]]
-    end
-}
-
-themes[#themes + 1] = {
     name = 'Catppuccin Latte',
     id = 'catppuccin_latte',
     mode = 'light',
@@ -23,12 +13,22 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-    name = 'Kanagawa Lotus',
-    id = 'kangawa_lotus',
+    name = 'Rose Pine Dawn',
+    id = 'rose_pine_dawn',
     mode = 'light',
     command = function ()
         opt.background = 'light'
-        cmd [[colorscheme kanagawa-lotus]]
+        cmd [[colorscheme rose-pine]]
+    end
+}
+
+themes[#themes + 1] = {
+    name = 'Solarized8 Flat',
+    id = 'solarized8_flat',
+    mode = 'light',
+    command = function ()
+        opt.background = 'light'
+        cmd [[colorscheme solarized8_flat]]
     end
 }
 
@@ -80,12 +80,12 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-    name = 'Janah',
-    id = 'janah',
+    name = 'Catppuccin Frappe',
+    id = 'catppuccin_frappe',
     mode = 'dark',
     command = function ()
         opt.background = 'dark'
-        cmd [[colorscheme janah]]
+        cmd [[colorscheme catppuccin-frappe]]
     end
 }
 
@@ -106,16 +106,6 @@ themes[#themes + 1] = {
     command = function ()
         opt.background = 'dark'
         cmd [[colorscheme eva01-LCL]]
-    end
-}
-
-themes[#themes + 1] = {
-    name = 'Snazzy',
-    id = 'snazzy',
-    mode = 'dark',
-    command = function ()
-        opt.background = 'dark'
-        cmd [[colorscheme snazzy]]
     end
 }
 
@@ -146,6 +136,16 @@ themes[#themes + 1] = {
     command = function ()
         opt.background = 'dark'
         cmd [[colorscheme horizon]]
+    end
+}
+
+themes[#themes + 1] = {
+    name = 'Rose Pine',
+    id = 'rose_pine',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme rose-pine]]
     end
 }
 

@@ -108,14 +108,13 @@ return require('packer').startup(function(use)
 
     -- color schemes
     use { 'catppuccin/nvim', as = 'catppuccin' }
-	use 'hzchirs/vim-material'
-    use 'connorholyday/vim-snazzy'
 	use 'thedenisnikulin/vim-cyberpunk'
 	use 'sainnhe/sonokai'
-    use 'mhinz/vim-janah'
     use 'hachy/eva01.vim'
     use 'rebelot/kanagawa.nvim'
     use 'lunarvim/horizon.nvim'
+    use 'rose-pine/neovim'
+    use 'lifepillar/vim-solarized8'
 
 
     -- Automatically set up your configuration after cloning packer.nvim
