@@ -9,6 +9,7 @@ api = vim.api
 bo = vim.bo
 wo = vim.wo
 lsp = vim.lsp
+diagnostic = vim.diagnostic
 
 whichkey = require('which-key')
 notify = require('notify')

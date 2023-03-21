@@ -50,6 +50,12 @@ map('n', '<Leader>rn', function () lsp.buf.rename() end, {})
 map('n', 'K', function () lsp.buf.hover() end, {})
 
 
+-- diagnostics
+map('n', ']d', function () diagnostic.goto_next() end, {})
+map('n', '[d', function () diagnostic.goto_prev() end, {})
+map('n', 'df', function () diagnostic.open_float() end, {})
+
+
 -- neovide
 scale_note= nil
 if g.neovide then
@@ -68,7 +74,6 @@ end
 -- todo: add binding for quick exit
 -- todo: resolev how to q with buffer closing
 -- todo: add binding for trouble list
--- todo: add bindig for diagnostig jump on ]d [d
 -- todo: add bindings for auto commas etc
 -- todo: add binding to clear selection
 -- todo: add bindings to move buffers
