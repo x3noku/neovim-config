@@ -22,12 +22,33 @@ local function supports_navic(server)
 end
 
 for _, server in pairs(mason_servers) do
-    lspconfig[server].setup({
+    local setup_config = {
         capabilities = capabilities,
         on_attach = function (client, bufnr) 
             if supports_navic(server) then
                 navic.attach(client, bufnr)
             end
         end
-    })
+    }
+    if server == 'tailwindcss' then
+        setup_config.settings = {
+            tailwindCSS = {
+                classAttributes = { 
+                    'class',
+                    'classList',
+                    'ngClass',
+                    'className',
+                    'containerClassName',
+                    'placeholderClassName',
+                    'inputClassName',
+                    'labelClassName',
+                    'hintClassName',
+                    'errorClassName',
+                    'iconClassName',
+                }
+            }
+        }
+    end
+
+    lspconfig[server].setup(setup_config)
 end
