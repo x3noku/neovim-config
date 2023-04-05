@@ -3,6 +3,11 @@ local navic = require('nvim-navic')
 local mason_servers = require('configs.mason-lspconfig').ensure_installed
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+}
+
 lsp.handlers['textDocument/hover'] = lsp.with(
     lsp.handlers.hover, {
         border = 'rounded'

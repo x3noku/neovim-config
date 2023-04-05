@@ -18,6 +18,14 @@ opt.ruler = true -- scroll percantage
 opt.signcolumn = 'yes' -- extra space for diagnostic symbols
 
 
+-- folding
+o.foldcolumn = '1'
+o.foldlevel = 99 
+o.foldlevelstart = 99
+o.foldenable = true
+o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
+
+
 -- wrapping
 wo.wrap = true -- wrap text
 wo.linebreak = true -- soft wrap text
@@ -29,6 +37,7 @@ g.indentLine_setConceal = 0 -- disable json conceal
 opt.encoding = 'UTF-8' -- encoding
 cmd [[set noshowmode]] -- disable standart mode display
 cmd [[set clipboard=unnamedplus]] -- system clipboard
+
 
 -- neovide
 if g.neovide then
@@ -85,6 +94,7 @@ require('nvim-autopairs').setup()
 require('Comment').setup(require('configs.Comment'))
 require('indent-o-matic').setup(require('configs.indent-o-matic'))
 require('presence').setup(require('configs.presence'))
+require('ufo').setup()
 
 
 -- UltiSnips

@@ -94,6 +94,7 @@ return require('packer').startup(function(use)
     -- utils dependencies
     use 'nvim-lua/plenary.nvim' -- lua functions used for neotree, todos, fuzzy
     use 'sharkdp/fd' -- finder in files used for fuzzy
+    use 'kevinhwang91/promise-async' -- promises
 
 
     -- utils
@@ -106,6 +107,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-repeat' -- dot support for plugins
     use 'famiu/bufdelete.nvim' -- better buffer closing
     use 'andweeb/presence.nvim' -- discord status plugin
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
 
     -- color schemes
