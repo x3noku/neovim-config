@@ -5,6 +5,7 @@ return {
         builtins.diagnostics.eslint_d,
         builtins.formatting.eslint_d,
         builtins.formatting.fixjson,
+        builtins.formatting.dart_format,
     },
     on_attach = function(client, bufnr)
         if client.supports_method('textDocument/formatting') then

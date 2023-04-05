@@ -43,6 +43,7 @@ end
 -- lsp
 require('mason').setup(require('configs.mason'))
 require('mason-lspconfig').setup(require('configs.mason-lspconfig'))
+require('flutter-tools').setup()
 require('configs.lspconfig')
 
 
