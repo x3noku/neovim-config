@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
     use 'p00f/nvim-ts-rainbow' -- bracket colorizer
     use { 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' } -- todo highlighting
     use 'Yggdroot/indentLine' -- indent lines
+    use { 'barrett-ruth/import-cost.nvim', run = 'sh install.sh yarn' }
 
 
     -- ui blocks

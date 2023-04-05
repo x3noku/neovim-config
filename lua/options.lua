@@ -69,6 +69,7 @@ require('neoscroll').setup()
 require('dressing').setup(require('configs.dressing'))
 require('nvim-treesitter.configs').setup(require('configs.nvim-treesitter'))
 require('todo-comments').setup(require('configs.todo-comments'))
+require('import-cost').setup()
 
 
 -- ui blocks
