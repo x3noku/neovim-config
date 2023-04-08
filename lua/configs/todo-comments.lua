@@ -10,12 +10,12 @@ return {
     },
     highlight = {
         multiline = false,
-        before = 'fg',
-        keyword = 'wide_fg',
-        after = 'fg',
+        before = 'bg',
+        keyword = 'wide_bg',
+        after = 'bg',
         comments_only = true,
     },
     gui_style = {
-        fg = 'BOLD',
+        bg = 'BOLD',
     },
 }
