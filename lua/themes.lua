@@ -149,6 +149,36 @@ themes[#themes + 1] = {
     end
 }
 
+themes[#themes + 1] = {
+    name = 'Embark',
+    id = 'embark',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme embark]]
+    end
+}
+
+themes[#themes + 1] = {
+    name = 'Fiesta',
+    id = 'no-clown-fiesta',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme no-clown-fiesta]]
+    end
+}
+
+themes[#themes + 1] = {
+    name = 'Oh My Monokai',
+    id = 'oh-my-monokai',
+    mode = 'dark',
+    command = function ()
+        opt.background = 'dark'
+        cmd [[colorscheme oh-my-monokai]]
+    end
+}
+
 
 -- theme map
 local binds = '123456789abcdefghijklmnopqrstuvwxyz'

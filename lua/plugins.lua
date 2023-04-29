@@ -119,6 +119,9 @@ return require('packer').startup(function(use)
     use 'lunarvim/horizon.nvim'
     use 'rose-pine/neovim'
     use 'lifepillar/vim-solarized8'
+    use { 'embark-theme/vim', as = 'embark' }
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'justinsgithub/oh-my-monokai.nvim'
 
 
     -- Automatically set up your configuration after cloning packer.nvim
