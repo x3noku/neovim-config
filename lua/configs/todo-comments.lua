@@ -10,10 +10,14 @@ return {
     },
     highlight = {
         multiline = false,
-        before = 'bg',
+        before = 'fg',
         keyword = 'wide_bg',
         after = 'bg',
         comments_only = true,
+        pattern = [[.*<(KEYWORDS)\s*]],
+    },
+    search = {
+        pattern = [[\b(KEYWORDS)]], -- ripgrep regex
     },
     gui_style = {
         bg = 'BOLD',

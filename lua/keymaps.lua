@@ -82,7 +82,7 @@ end
 -- finder
 map('n', 'ff', telescope.find_files, {})
 map('n', 'fg', telescope.live_grep, {})
-map('n', 'ft', function () cmd [[TodoTelescope keywords=TODO,ToDo,todo,FIXME,FixMe,fixme,WARN,Warn,warn,WARNING,Warning,warning]] end, {})
+map('n', 'ft', function () cmd [[TodoTrouble keywords=TODO,ToDo,todo,FIXME,FixMe,fixme,WARN,Warn,warn,WARNING,Warning,warning]] end, {})
 map('n', 'fc', function () cmd [[nohl]] end, {})
 
 
