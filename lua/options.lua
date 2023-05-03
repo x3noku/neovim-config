@@ -86,6 +86,7 @@ require('bufferline').setup(require('configs.bufferline'))
 require('lualine').setup(require('configs.lualine'))
 require('which-key').setup(require('configs.which-key'))
 require('trouble').setup(require('configs.trouble'))
+require('barbecue').setup()
 require('neo-tree').setup(require('configs.neo-tree'))
 
 

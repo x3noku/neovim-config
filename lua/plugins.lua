@@ -78,7 +78,7 @@ return require('packer').startup(function(use)
     use 'folke/which-key.nvim' -- keymap checker
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', requires = 'nvim-lua/plenary.nvim' } -- fuzzy
     use { 'folke/trouble.nvim', requires = 'nvim-tree/nvim-web-devicons' } -- pretty list of diagnostics
-    -- todo: replace with utilyre/barbecue.nvim
+    use{ 'utilyre/barbecue.nvim', tag = '*', requires = 'SmiteshP/nvim-navic' }
     use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' } -- current code context
     use { -- file tree
         'nvim-neo-tree/neo-tree.nvim',
@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
 
 
     -- utils dependencies
-    use 'nvim-lua/plenary.nvim' -- lua functions used for neotree, todos, fuzzy
+    use 'nvim-lua/plenary.nvim' -- lua functions used for neotree, to-dos, fuzzy
     use 'sharkdp/fd' -- finder in files used for fuzzy
     use 'kevinhwang91/promise-async' -- promises
 
