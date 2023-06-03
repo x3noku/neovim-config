@@ -3,9 +3,9 @@ local lspkind = require('lspkind')
 
 return {
     snippet = {
-        expand = function(args)
-            fn['UltiSnips#Anon'](args.body)
-        end,
+        -- expand = function(args)
+        --     fn['UltiSnips#Anon'](args.body)
+        -- end,
     },
     window = {
         completion = cmp.config.window.bordered(),
@@ -34,7 +34,7 @@ return {
     }),
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'ultisnips' },
+        -- { name = 'ultisnips' },
         { name = 'path' },
         { name = 'buffer', keyword_length = 2 },
         { name = 'emoji', insert = true },
