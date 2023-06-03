@@ -33,6 +33,7 @@ wo.list = false  -- hide special symbols
 
 
 -- other
+g.python3_host_prog = '/usr/bin/python3' -- python provider
 g.indentLine_setConceal = 0 -- disable json conceal
 opt.encoding = 'UTF-8' -- encoding
 cmd [[set noshowmode]] -- disable standart mode display

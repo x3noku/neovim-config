@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'lervag/vimtex'
     use { 'akinsho/flutter-tools.nvim', requires = { 'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' } }
+    use 'fladson/vim-kitty'
 
 
     -- autocomplete
