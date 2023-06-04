@@ -1,5 +1,5 @@
 return {
-    { "catppuccin/nvim", name = "catppuccin" },
+    { "catppuccin/nvim", name = "catppuccin", lazy = false },
     { "thedenisnikulin/vim-cyberpunk" },
     { "sainnhe/sonokai" },
     { "hachy/eva01.vim" },
