@@ -1,2 +1,9 @@
-packer_compiled.lua
-theme
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+.theme
