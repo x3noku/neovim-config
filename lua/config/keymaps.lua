@@ -11,9 +11,9 @@ local function map(mode, lhs, rhs, opts)
     end
 end
 
-map("i", "jj", "<esc>", { silent = true })
-map("n", "fc", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
-map("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit all" })
+map("i", "jj", "<ESC>", { silent = true })
+map("n", "fc", ":noh<CR><ESC>", { desc = "Escape and clear hlsearch" })
+map("n", "<C-q>", ":qa<CR>", { desc = "Quit all" })
 
-map("n", "{", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
-map("n", "}", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
+map("n", "{", ":BufferLineMovePrev<CR>", { desc = "Move buffer left" })
+map("n", "}", ":BufferLineMoveNext<CR>", { desc = "Move buffer right" })
