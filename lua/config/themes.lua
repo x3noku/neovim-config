@@ -68,22 +68,22 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-    name = "Rose Pine Dawn",
-    id = "rose_pine_dawn",
+    name = "Sweetie",
+    id = "sweetie",
     mode = "light",
     command = function()
         opt.background = "light"
-        cmd([[colorscheme rose-pine]])
+        cmd([[colorscheme sweetie]])
     end,
 }
 
 themes[#themes + 1] = {
-    name = "Solarized8 Flat",
-    id = "solarized8_flat",
+    name = "One Light",
+    id = "onelight",
     mode = "light",
     command = function()
         opt.background = "light"
-        cmd([[colorscheme solarized8_flat]])
+        cmd([[colorscheme onelight]])
     end,
 }
 
@@ -123,45 +123,25 @@ themes[#themes + 1] = {
     end,
 }
 
-themes[#themes + 1] = {
-    name = "Catppuccin Mocha",
-    id = "catppuccin_mocha",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme catppuccin-mocha]])
-    end,
-}
+-- themes[#themes + 1] = {
+--     name = "Catppuccin Mocha",
+--     id = "catppuccin_mocha",
+--     mode = "dark",
+--     command = function()
+--         opt.background = "dark"
+--         cmd([[colorscheme catppuccin-mocha]])
+--     end,
+-- }
 
-themes[#themes + 1] = {
-    name = "Catppuccin Frappe",
-    id = "catppuccin_frappe",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme catppuccin-frappe]])
-    end,
-}
-
-themes[#themes + 1] = {
-    name = "Eva 01",
-    id = "eva01",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme eva01]])
-    end,
-}
-
-themes[#themes + 1] = {
-    name = "Eva 01 LCL",
-    id = "eva01lcl",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme eva01-LCL]])
-    end,
-}
+-- themes[#themes + 1] = {
+--     name = "Catppuccin Frappe",
+--     id = "catppuccin_frappe",
+--     mode = "dark",
+--     command = function()
+--         opt.background = "dark"
+--         cmd([[colorscheme catppuccin-frappe]])
+--     end,
+-- }
 
 themes[#themes + 1] = {
     name = "Kanagawa Wave",
@@ -194,42 +174,22 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-    name = "Rose Pine",
-    id = "rose_pine",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme rose-pine]])
-    end,
-}
-
-themes[#themes + 1] = {
-    name = "Embark",
-    id = "embark",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme embark]])
-    end,
-}
-
-themes[#themes + 1] = {
-    name = "Fiesta",
-    id = "no-clown-fiesta",
-    mode = "dark",
-    command = function()
-        opt.background = "dark"
-        cmd([[colorscheme no-clown-fiesta]])
-    end,
-}
-
-themes[#themes + 1] = {
     name = "Oh My Monokai",
     id = "oh-my-monokai",
     mode = "dark",
     command = function()
         opt.background = "dark"
         cmd([[colorscheme oh-my-monokai]])
+    end,
+}
+
+themes[#themes + 1] = {
+    name = "Bamboo",
+    id = "bamboo",
+    mode = "dark",
+    command = function()
+        opt.background = "dark"
+        cmd([[colorscheme bamboo]])
     end,
 }
 
