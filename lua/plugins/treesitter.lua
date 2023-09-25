@@ -7,7 +7,6 @@ return {
                 "c",
                 "cpp",
                 "css",
-                "dart",
                 "dockerfile",
                 "gitignore",
                 "html",
