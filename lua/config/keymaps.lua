@@ -18,6 +18,11 @@ map("n", "<C-q>", ":qa<CR>", { desc = "Quit all" })
 map("n", "{", ":BufferLineMovePrev<CR>", { desc = "Move buffer left" })
 map("n", "}", ":BufferLineMoveNext<CR>", { desc = "Move buffer right" })
 
+map("n", "<leader>qr", ":Reload<CR>", { desc = "Reload nvim" })
+
+map("v", "<leader>p", [["0p]], { desc = "Paste without yanking" })
+
+-- fixme: find out keys to save previous <A-j>, <A-k> behaviour
 map("n", "<A-h>", require("smart-splits").resize_left)
 map("n", "<A-j>", require("smart-splits").resize_down)
 map("n", "<A-k>", require("smart-splits").resize_up)
