@@ -15,6 +15,11 @@ map("i", "jj", "<ESC>", { silent = true })
 map("n", "fc", ":noh<CR><ESC>", { desc = "Escape and clear hlsearch" })
 map("n", "<C-q>", ":qa<CR>", { desc = "Quit all" })
 
+map("n", "<C-u>", "<C-u>zz", { desc = "Better move up" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Better move down" })
+map("n", "N", "Nzz", { desc = "Search previous" })
+map("n", "n", "nzz", { desc = "Search next" })
+
 map("n", "{", ":BufferLineMovePrev<CR>", { desc = "Move buffer left" })
 map("n", "}", ":BufferLineMoveNext<CR>", { desc = "Move buffer right" })
 
