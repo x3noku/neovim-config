@@ -7,6 +7,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+vim.api.nvim_create_autocmd('VimLeave', { command = '!eslint_d stop' })
+
 vim.defer_fn(function()
   -- todo: set theme
   -- local themes = require 'config.themes'
