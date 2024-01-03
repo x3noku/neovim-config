@@ -1,7 +1,7 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', 'jj', '<ESC>', { silent = true })
-vim.keymap.set('n', 'fc', ':noh<CR><ESC>', { desc = 'Escape and clear hlsearch' })
 vim.keymap.set('n', '<C-q>', ':qa<CR>', { desc = 'Quit all' })
+vim.keymap.set('n', '<leader>fc', ':noh<CR><ESC>', { desc = '[F]ind [C]lear' })
 
 -- Navigation keymaps
 vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
