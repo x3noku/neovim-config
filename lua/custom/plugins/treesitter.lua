@@ -11,6 +11,7 @@ return {
         'gitignore',
         'html',
         'javascript',
+        'json',
         'lua',
         'markdown',
         'markdown_inline',

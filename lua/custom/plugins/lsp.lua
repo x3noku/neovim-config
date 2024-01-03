@@ -4,17 +4,12 @@ local on_attach = function(client, bufnr)
       desc = 'LSP: ' .. desc
     end
 
-    -- if client.name == 'eslint_d' then
-    --   client.server_capabilities.documentFormattingProvider = true
-    --   -- client.server_capabilities.document_formatting = true
-    -- elseif client.name == 'server' then
-    --   client.server_capabilities.documentFormattingProvider = false
-    -- end
-
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  vim.keymap.set('n', '<leader>cr', function()
+    return ':IncRename ' .. vim.fn.expand '<cword>'
+  end, { buffer = bufnr, desc = '[C]ode [R]ename', expr = true })
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
@@ -68,18 +63,24 @@ local servers = {
       completeFunctionCalls = true,
     },
   },
-  eslint = {
-    workingDirectory = { mode = 'auto' },
-  },
 }
 
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
+    {
+      'williamboman/mason-lspconfig.nvim',
+      keys = { { '<leader>cm', '<cmd>Mason<cr>', desc = '[M]ason' } },
+    },
     { 'j-hui/fidget.nvim', opts = {} },
     { 'folke/neodev.nvim' },
+    {
+      'smjonas/inc-rename.nvim',
+      config = function()
+        require('inc_rename').setup()
+      end,
+    },
   },
   config = function()
     require('mason').setup()
