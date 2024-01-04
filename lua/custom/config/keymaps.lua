@@ -34,6 +34,9 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 -- Telescope file browser
 vim.keymap.set('n', '<space>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
 
+-- Lazygit
+vim.keymap.set('n', '<space>gg', ':LazyGit<CR>', { noremap = true })
+
 -- map("n", "{", ":BufferLineMovePrev<CR>", { desc = "Move buffer left" })
 -- map("n", "}", ":BufferLineMoveNext<CR>", { desc = "Move buffer right" })
 --
