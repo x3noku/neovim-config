@@ -8,8 +8,9 @@ return {
 
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
-    -- 'hrsh7th/cmp-path',
+    'hrsh7th/cmp-path',
     -- 'hrsh7th/cmp-buffer',
+    'chrisgrieser/cmp_yanky',
 
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
@@ -49,8 +50,9 @@ return {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'path' },
         -- { name = 'buffer' },
-        -- { name = 'path' },
+        { name = 'cmp_yanky' },
       },
       formatting = {
         format = lspkind.cmp_format {
