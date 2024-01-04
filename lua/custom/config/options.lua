@@ -44,6 +44,3 @@ vim.opt.colorcolumn = '120' -- visual stop column width
 vim.opt.shiftwidth = 4 -- Size of an indent
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.pumblend = 10 -- opacity for popups
-
--- Clipboard
--- vim.o.clipboard = 'unnamedplus'

@@ -37,6 +37,17 @@ vim.keymap.set('n', '<space>fb', ':Telescope file_browser path=%:p:h select_buff
 -- Lazygit
 vim.keymap.set('n', '<space>gg', ':LazyGit<CR>', { noremap = true })
 
+-- Clipboard
+vim.keymap.set({ 'n', 'x' }, 'p', '<Plug>(YankyPutAfter)')
+vim.keymap.set({ 'n', 'x' }, 'P', '<Plug>(YankyPutBefore)')
+vim.keymap.set('n', '<c-p>', '<Plug>(YankyPreviousEntry)')
+vim.keymap.set('n', '<c-n>', '<Plug>(YankyNextEntry)')
+
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>yy', '"+yy')
+vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p')
+vim.keymap.set({ 'n', 'x' }, '<leader>P', '"+P')
+
 -- map("n", "{", ":BufferLineMovePrev<CR>", { desc = "Move buffer left" })
 -- map("n", "}", ":BufferLineMoveNext<CR>", { desc = "Move buffer right" })
 --
