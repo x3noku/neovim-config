@@ -81,6 +81,22 @@ return {
         require('inc_rename').setup()
       end,
     },
+    {
+      'SmiteshP/nvim-navbuddy',
+      dependencies = {
+        {
+          'utilyre/barbecue.nvim',
+          version = '*',
+          dependencies = {
+            'SmiteshP/nvim-navic',
+            'nvim-tree/nvim-web-devicons',
+          },
+        },
+        'SmiteshP/nvim-navic',
+        'MunifTanjim/nui.nvim',
+      },
+      opts = { lsp = { auto_attach = true } },
+    },
   },
   config = function()
     require('mason').setup()
