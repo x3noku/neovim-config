@@ -31,9 +31,8 @@ vim.keymap.set('n', '<leader>sg', require('telescope').extensions.live_grep_args
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
--- Telescope file browser
--- vim.keymap.set('n', '<space>fbc', ':Telescope file_browser<CR>', { noremap = true })
-vim.keymap.set('n', '<space>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
+-- File browser
+vim.keymap.set('n', '<leader>b', ':Neotree<CR>', { noremap = true })
 
 -- Lazygit
 vim.keymap.set('n', '<space>gg', ':LazyGit<CR>', { noremap = true })
