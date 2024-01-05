@@ -11,6 +11,6 @@ vim.api.nvim_create_autocmd('VimLeave', { command = '!eslint_d stop' })
 
 vim.defer_fn(function()
   -- todo: set theme
-  -- local themes = require 'config.themes'
-  -- themes.set(themes.read())
+  local themes = require 'custom.config.themes'
+  themes.set(themes.read())
 end, 0)
