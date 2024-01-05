@@ -22,7 +22,7 @@ return {
             return require('noice').api.status.command.get()
           end,
           cond = function()
-            return package.loaded['noice'] and require('noice').api.status.command.has()
+            return require('noice').api.status.command.has()
           end,
         },
         {
@@ -37,6 +37,16 @@ return {
           end,
           cond = function()
             return require('noice').api.status.mode.has()
+          end,
+          color = { fg = '#ff9e64' },
+        },
+        {
+          function()
+            local search = require('noice').api.status.search.get()
+            return string.match(search, '%/%w+') .. ' ' .. string.match(search, '%[%d+%/%d+%]')
+          end,
+          cond = function()
+            return require('noice').api.status.search.has()
           end,
           color = { fg = '#ff9e64' },
         },
