@@ -25,6 +25,21 @@ return {
             return package.loaded['noice'] and require('noice').api.status.command.has()
           end,
         },
+        {
+          function()
+            local mode = require('noice').api.status.mode.get()
+
+            if not string.find(mode, 'recording') then
+              return ''
+            end
+
+            return mode
+          end,
+          cond = function()
+            return require('noice').api.status.mode.has()
+          end,
+          color = { fg = '#ff9e64' },
+        },
         -- {
         --   function()
         --     return '  ' .. require('dap').status()

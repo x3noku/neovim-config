@@ -73,7 +73,6 @@ return {
       'williamboman/mason-lspconfig.nvim',
       keys = { { '<leader>cm', '<cmd>Mason<cr>', desc = '[M]ason' } },
     },
-    { 'j-hui/fidget.nvim', opts = {} },
     { 'folke/neodev.nvim' },
     {
       'smjonas/inc-rename.nvim',
@@ -98,7 +97,11 @@ return {
         { 'SmiteshP/nvim-navic' },
         { 'MunifTanjim/nui.nvim' },
       },
-      opts = { lsp = { auto_attach = true } },
+      opts = {
+        lsp = {
+          auto_attach = true,
+        },
+      },
     },
   },
   config = function()
