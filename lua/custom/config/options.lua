@@ -4,7 +4,7 @@ vim.g.maplocalleader = ' '
 -- Cursor
 vim.opt.cursorline = true -- highlight current line
 vim.opt.scrolloff = 4 -- cursor margin
-vim.o.mouse = 'a'
+vim.opt.mouse = 'a'
 
 -- Enumeration
 vim.wo.number = true -- enumeration
@@ -12,34 +12,33 @@ vim.wo.relativenumber = true -- relative enumeration
 vim.wo.signcolumn = 'yes' -- extra space for diagnostic symbols
 
 -- Folding
-vim.o.foldcolumn = '1'
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
+vim.opt.foldcolumn = '1'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.fillchars = { eob = ' ', fold = ' ', foldopen = '', foldsep = ' ', foldclose = '' }
 
 -- Wrapping
 vim.wo.wrap = true -- soft wrap text
 vim.wo.linebreak = true -- break by special symbols
 vim.wo.list = false -- hide trailing blank symbols
-vim.o.breakindent = true -- save indent when wrapping line
+vim.opt.breakindent = true -- save indent when wrapping line
 -- vim.opt.showbreak = '\\ ' -- virual symbols to show before wrapped line
 
 -- History
-vim.o.undofile = true
-vim.o.updatetime = 250
+vim.opt.undofile = true
+vim.opt.updatetime = 250
 
 -- Search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = true
 
 -- Completion
-vim.o.timeoutlen = 300
-vim.o.completeopt = 'menuone,noselect'
+vim.opt.timeoutlen = 300
+vim.opt.completeopt = { 'menuone', 'noselect' }
 
 -- UI
-vim.o.termguicolors = true
 vim.opt.colorcolumn = '120' -- visual stop column width
 vim.opt.shiftwidth = 4 -- Size of an indent
 vim.opt.tabstop = 4 -- Number of spaces tabs count for

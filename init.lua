@@ -13,16 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require 'custom.config.options'
 require('lazy').setup({
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
   { import = 'custom.plugins' },
