@@ -91,9 +91,12 @@ return {
             'SmiteshP/nvim-navic',
             'nvim-tree/nvim-web-devicons',
           },
+          config = function()
+            require('barbecue').setup()
+          end,
         },
-        'SmiteshP/nvim-navic',
-        'MunifTanjim/nui.nvim',
+        { 'SmiteshP/nvim-navic' },
+        { 'MunifTanjim/nui.nvim' },
       },
       opts = { lsp = { auto_attach = true } },
     },

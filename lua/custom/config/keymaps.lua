@@ -32,6 +32,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 -- Telescope file browser
+-- vim.keymap.set('n', '<space>fbc', ':Telescope file_browser<CR>', { noremap = true })
 vim.keymap.set('n', '<space>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
 
 -- Lazygit
