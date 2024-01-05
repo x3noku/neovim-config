@@ -3,7 +3,7 @@ vim.g.maplocalleader = ' '
 
 -- Cursor
 vim.opt.cursorline = true -- highlight current line
-vim.opt.so = 5 -- cursor margin
+vim.opt.scrolloff = 4 -- cursor margin
 vim.o.mouse = 'a'
 
 -- Enumeration
@@ -23,7 +23,7 @@ vim.wo.wrap = true -- soft wrap text
 vim.wo.linebreak = true -- break by special symbols
 vim.wo.list = false -- hide trailing blank symbols
 vim.o.breakindent = true -- save indent when wrapping line
-vim.opt.showbreak = '\\ ' -- virual symbols to show before wrapped line
+-- vim.opt.showbreak = '\\ ' -- virual symbols to show before wrapped line
 
 -- History
 vim.o.undofile = true
@@ -44,3 +44,4 @@ vim.opt.colorcolumn = '120' -- visual stop column width
 vim.opt.shiftwidth = 4 -- Size of an indent
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
 vim.opt.pumblend = 10 -- opacity for popups
+vim.opt.pumheight = 16 -- number of entries in a popup

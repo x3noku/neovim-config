@@ -4,8 +4,6 @@ return {
     options = {
       icons_enabled = true,
       theme = 'auto',
-      -- component_separators = '|',
-      -- component_separators = { left = '', right = ''},
       component_separators = '',
       section_separators = '',
       -- section_separators = { left = '', right = '' },
