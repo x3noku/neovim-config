@@ -1,7 +1,6 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', 'jj', '<ESC>', { silent = true })
 vim.keymap.set('n', '<C-q>', ':qa<CR>', { desc = 'Quit all' })
-vim.keymap.set('n', '<leader>fc', ':noh<CR><ESC>', { desc = '[F]ind [C]lear' })
 
 -- Navigation keymaps
 vim.keymap.set('n', 'k', 'v:count == 0 ? "gk" : "k"', { expr = true, silent = true })
@@ -20,16 +19,17 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Telescope keymaps
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown())
-end, { desc = '[/] Fuzzily search in current buffer' })
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+-- vim.keymap.set('n', '<leader>/', function()
+--   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown())
+-- end, { desc = '[/] Fuzzily search in current buffer' })
+-- vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+-- vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
+vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
+vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = '[F]ind by [G]rep' })
+vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
+vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
+vim.keymap.set('n', '<leader>fc', ':noh<CR>', { desc = '[F]ind [C]lear' })
 
 -- File browser
 vim.keymap.set('n', '<leader>b', ':Neotree<CR>', { noremap = true })
@@ -48,9 +48,6 @@ vim.keymap.set('n', '<leader>yy', '"+yy')
 vim.keymap.set({ 'n', 'x' }, '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'x' }, '<leader>P', '"+P')
 
--- map("n", "{", ":BufferLineMovePrev<CR>", { desc = "Move buffer left" })
--- map("n", "}", ":BufferLineMoveNext<CR>", { desc = "Move buffer right" })
---
 -- map("n", "<A-h>", require("smart-splits").resize_left)
 -- map("n", "<A-j>", require("smart-splits").resize_down)
 -- map("n", "<A-k>", require("smart-splits").resize_up)
