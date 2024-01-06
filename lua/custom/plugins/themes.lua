@@ -1,6 +1,8 @@
 return {
-  -- { "catppuccin/nvim", name = "catppuccin", lazy = false },
-  -- { "thedenisnikulin/vim-cyberpunk" },
+  {
+    'rmehri01/onenord.nvim',
+    lazy = true,
+  },
   {
     'sainnhe/sonokai',
     lazy = true,
@@ -13,10 +15,24 @@ return {
     'savq/melange-nvim',
     lazy = true,
   },
-  -- { "rebelot/kanagawa.nvim" },
-  -- { "lunarvim/horizon.nvim" },
-  -- { "justinsgithub/oh-my-monokai.nvim" },
-  -- { "ribru17/bamboo.nvim" },
-  -- { "NTBBloodbath/sweetie.nvim" },
-  -- { "olimorris/onedarkpro.nvim" },
+  {
+    'zootedb0t/citruszest.nvim',
+    lazy = true,
+  },
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = true,
+  },
+  {
+    'justinsgithub/oh-my-monokai.nvim',
+    lazy = true,
+  },
+  {
+    'NTBBloodbath/sweetie.nvim',
+    lazy = false,
+  },
+  {
+    'nyoom-engineering/oxocarbon.nvim',
+    lazy = true,
+  },
 }

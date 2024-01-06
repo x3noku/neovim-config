@@ -48,6 +48,7 @@ end
 
 function M.set(theme)
   vim.opt.background = theme.mode or 'dark'
+  vim.opt.termguicolors = theme.termguicolors or false
   theme.command()
 
   write_theme(theme.id)
@@ -55,41 +56,22 @@ function M.set(theme)
 end
 
 -- light themes
--- themes[#themes + 1] = {
---   name = 'Catppuccin Latte',
---   id = 'catppuccin_latte',
---   mode = 'light',
---   command = function()
---     vim.opt.background = 'light'
---     vim.cmd [[colorscheme catppuccin-latte]]
---   end,
--- }
-
--- themes[#themes + 1] = {
---   name = 'Sweetie',
---   id = 'sweetie',
---   mode = 'light',
---   command = function()
---     vim.opt.background = 'light'
---     vim.cmd [[colorscheme sweetie]]
---   end,
--- }
-
--- themes[#themes + 1] = {
---   name = 'One Light',
---   id = 'onelight',
---   mode = 'light',
---   command = function()
---     vim.opt.background = 'light'
---     vim.cmd [[colorscheme onelight]]
---   end,
--- }
+themes[#themes + 1] = {
+  name = 'OneNord',
+  id = 'onenord-light',
+  mode = 'light',
+  termguicolors = true,
+  command = function()
+    require('onenord').setup()
+  end,
+}
 
 -- dark themes
 themes[#themes + 1] = {
   name = 'Sonokai Andromeda',
   id = 'sonokai_andromeda',
   mode = 'dark',
+  termguicolors = true,
   command = function()
     vim.g.sonokai_style = 'andromeda' -- default, atlantis, andromeda, shusia, maia, espresso
     vim.g.sonokai_better_performance = 1
@@ -101,6 +83,7 @@ themes[#themes + 1] = {
   name = 'Sonokai Shusia',
   id = 'sonokai_shusia',
   mode = 'dark',
+  termguicolors = true,
   command = function()
     vim.g.sonokai_style = 'shusia' -- default, atlantis, andromeda, shusia, maia, espresso
     vim.g.sonokai_better_performance = 1
@@ -108,105 +91,102 @@ themes[#themes + 1] = {
   end,
 }
 
--- themes[#themes + 1] = {
---   name = 'Cyberpunk',
---   id = 'cyberpunk',
---   mode = 'dark',
---   command = function()
---     vim.opt.background = 'dark'
---     vim.g.cyberpunk_cursorline = 'black'
---     vim.cmd [[colorscheme cyberpunk]]
---   end,
--- }
+themes[#themes + 1] = {
+  name = 'Kanagawa Wave',
+  id = 'kangawa_wave',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'kanagawa-wave'
+  end,
+}
 
--- themes[#themes + 1] = {
---     name = "Catppuccin Mocha",
---     id = "catppuccin_mocha",
---     mode = "dark",
---     command = function()
---         opt.background = "dark"
---         cmd([[colorscheme catppuccin-mocha]])
---     end,
--- }
+themes[#themes + 1] = {
+  name = 'Kanagawa Dragon',
+  id = 'kangawa_dragon',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'kanagawa-dragon'
+  end,
+}
 
--- themes[#themes + 1] = {
---     name = "Catppuccin Frappe",
---     id = "catppuccin_frappe",
---     mode = "dark",
---     command = function()
---         opt.background = "dark"
---         cmd([[colorscheme catppuccin-frappe]])
---     end,
--- }
-
--- themes[#themes + 1] = {
---   name = 'Kanagawa Wave',
---   id = 'kangawa_wave',
---   mode = 'dark',
---   command = function()
---     vim.opt.background = 'dark'
---     vim.cmd [[colorscheme kanagawa-wave]]
---   end,
--- }
-
--- themes[#themes + 1] = {
---   name = 'Kanagawa Dragon',
---   id = 'kangawa_dragon',
---   mode = 'dark',
---   command = function()
---     vim.opt.background = 'dark'
---     vim.cmd [[colorscheme kanagawa-dragon]]
---   end,
--- }
-
--- themes[#themes + 1] = {
---   name = 'Horizon',
---   id = 'horizon',
---   mode = 'dark',
---   command = function()
---     vim.opt.background = 'dark'
---     vim.cmd [[colorscheme horizon]]
---   end,
--- }
-
--- themes[#themes + 1] = {
---   name = 'Oh My Monokai',
---   id = 'oh-my-monokai',
---   mode = 'dark',
---   command = function()
---     vim.opt.background = 'dark'
---     vim.cmd [[colorscheme oh-my-monokai]]
---   end,
--- }
+themes[#themes + 1] = {
+  name = 'Oh My Monokai',
+  id = 'oh-my-monokai',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'oh-my-monokai'
+  end,
+}
 
 themes[#themes + 1] = {
   name = 'Melange',
   id = 'melange',
   mode = 'dark',
+  termguicolors = true,
   command = function()
-    vim.opt.termguicolors = true
     vim.cmd.colorscheme 'melange'
   end,
 }
 
 themes[#themes + 1] = {
-  name = 'OneDark',
-  id = 'onedark',
+  name = 'OneDark Darker',
+  id = 'onedark-darker',
   mode = 'dark',
+  termguicolors = true,
   command = function()
+    require('onedark').setup {
+      style = 'darker',
+    }
     require('onedark').load()
   end,
 }
 
--- themes[#themes + 1] = {
---   name = 'Bamboo',
---   id = 'bamboo',
---   mode = 'dark',
---   command = function()
---     vim.opt.background = 'dark'
---     vim.cmd [[colorscheme bamboo]]
---   end,
--- }
+themes[#themes + 1] = {
+  name = 'OneDark Warmer',
+  id = 'onedark-warmer',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    require('onedark').setup {
+      style = 'warmer',
+    }
+    require('onedark').load()
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Citruszest',
+  id = 'citruszest',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'citruszest'
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Sweetie',
+  id = 'sweetie',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'sweetie'
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Oxocarbon',
+  id = 'oxocarbon-light',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'oxocarbon'
+    -- require('onedark').load()
+  end,
+}
 
 local binds = '123456789abcdefghijklmnopqrstuvwxyz'
 local i = 1
