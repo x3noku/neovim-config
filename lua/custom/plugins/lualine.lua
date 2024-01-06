@@ -27,13 +27,7 @@ return {
         },
         {
           function()
-            local mode = require('noice').api.status.mode.get()
-
-            if not string.find(mode, 'recording') then
-              return ''
-            end
-
-            return mode
+            return string.match(require('noice').api.status.mode.get(), 'recording %@%w')
           end,
           cond = function()
             return require('noice').api.status.mode.has()
