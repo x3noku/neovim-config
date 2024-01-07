@@ -35,6 +35,7 @@ local on_attach = function(client, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
+-- todo: rework how lsp servers are defined
 local servers = {
   lua_ls = {
     Lua = {

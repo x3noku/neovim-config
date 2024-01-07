@@ -4,7 +4,8 @@ vim.g.maplocalleader = ' '
 -- Cursor
 vim.opt.cursorline = true -- highlight current line
 vim.opt.scrolloff = 4 -- cursor margin
-vim.opt.mouse = 'a'
+vim.opt.mouse = 'a' -- allow mouse
+vim.opt.virtualedit = 'block' -- allow cursor to move where there is no text in visual block mode
 
 -- Enumeration
 vim.wo.number = true -- enumeration
