@@ -39,6 +39,7 @@ vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = '[F]ind by [G]rep' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
+vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
 vim.keymap.set('n', '<leader>fc', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 
