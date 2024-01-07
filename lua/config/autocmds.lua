@@ -10,6 +10,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+vim.api.nvim_create_autocmd("VimLeave", {
+    command = "!eslint_d stop",
+})
+
 vim.api.nvim_create_user_command("Reload", function()
     pcall(function()
         vim.fn.Preserve("so ~/.config/nvim/init.nvim")

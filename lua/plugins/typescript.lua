@@ -37,7 +37,7 @@ return {
             },
             setup = {
                 tsserver = function(_, opts)
-                    require("lazyvim.util").on_attach(function(client, buffer)
+                    require("lazyvim.util").lsp.on_attach(function(client, buffer)
                         if client.name == "tsserver" then
                             vim.keymap.set(
                                 "n",
