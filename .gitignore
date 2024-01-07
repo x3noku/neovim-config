@@ -1,10 +1,4 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
-*.log
-data
-.theme
-lazy-lock.json
+tags
+test.sh
+.luarc.json
+nvim
