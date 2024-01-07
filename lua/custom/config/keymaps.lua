@@ -1,6 +1,6 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', 'jj', '<esc>', { silent = true })
-vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit all' })
+vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>', { desc = 'Quit all' })
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
 -- Navigation keymaps
@@ -23,7 +23,7 @@ vim.keymap.set('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move line up' 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Telescope keymaps
@@ -79,9 +79,11 @@ vim.keymap.set('v', '>', '>gv')
 
 -- Managers
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
-vim.keymap.set('n', '<leader>m', '<cmd>Mason<cr>', { desc = 'Lazy' })
-vim.keymap.set('n', '<leader>b', '<cmd>Neotree<cr>', { noremap = true })
-vim.keymap.set('n', '<space>gg', '<cmd>LazyGit<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>m', '<cmd>Mason<cr>', { desc = 'Mason' })
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree<cr>', { desc = 'Files', noremap = true })
+vim.keymap.set('n', '<space>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit', noremap = true })
+
+-- todo: add git hunks hotkeys
 
 -- -- Floating terminal
 -- local lazyterm = function() Util.terminal(nil, { cwd = Util.root() }) end

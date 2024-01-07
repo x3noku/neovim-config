@@ -251,6 +251,6 @@ for _, theme in pairs(themes) do
   end
 end
 
-require('which-key').register(thememap, { prefix = '<leader>t' })
+require('which-key').register(thememap, { prefix = '<leader>ut' })
 
 return M
