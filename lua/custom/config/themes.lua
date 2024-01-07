@@ -69,7 +69,7 @@ themes[#themes + 1] = {
 -- dark themes
 themes[#themes + 1] = {
   name = 'Sonokai Andromeda',
-  id = 'sonokai_andromeda',
+  id = 'sonokai-andromeda',
   mode = 'dark',
   termguicolors = true,
   command = function()
@@ -81,7 +81,7 @@ themes[#themes + 1] = {
 
 themes[#themes + 1] = {
   name = 'Sonokai Shusia',
-  id = 'sonokai_shusia',
+  id = 'sonokai-shusia',
   mode = 'dark',
   termguicolors = true,
   command = function()
@@ -93,7 +93,7 @@ themes[#themes + 1] = {
 
 themes[#themes + 1] = {
   name = 'Kanagawa Wave',
-  id = 'kangawa_wave',
+  id = 'kangawa-wave',
   mode = 'dark',
   termguicolors = true,
   command = function()
@@ -103,7 +103,7 @@ themes[#themes + 1] = {
 
 themes[#themes + 1] = {
   name = 'Kanagawa Dragon',
-  id = 'kangawa_dragon',
+  id = 'kangawa-dragon',
   mode = 'dark',
   termguicolors = true,
   command = function()
@@ -179,12 +179,21 @@ themes[#themes + 1] = {
 
 themes[#themes + 1] = {
   name = 'Oxocarbon',
-  id = 'oxocarbon-light',
+  id = 'oxocarbon',
   mode = 'dark',
   termguicolors = true,
   command = function()
     vim.cmd.colorscheme 'oxocarbon'
-    -- require('onedark').load()
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Tokyonight',
+  id = 'tokyonight',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'tokyonight-night'
   end,
 }
 

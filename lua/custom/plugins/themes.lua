@@ -35,4 +35,8 @@ return {
     'nyoom-engineering/oxocarbon.nvim',
     lazy = true,
   },
+  {
+    'folke/tokyonight.nvim',
+    lazy = true,
+  },
 }
