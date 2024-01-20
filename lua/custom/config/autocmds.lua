@@ -11,10 +11,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- stop eslint server when vim is closed
-vim.api.nvim_create_autocmd('VimLeave', {
-  group = augroup 'eslint_stop',
-  command = '!eslint_d stop',
-})
+-- vim.api.nvim_create_autocmd('VimLeave', {
+--   group = augroup 'eslint_stop',
+--   command = '!eslint_d stop',
+-- })
 
 -- set theme when vim is loaded
 vim.api.nvim_create_autocmd('VimEnter', {
@@ -55,6 +55,7 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
   end,
 })
 
+-- todo: close telescope with <q> too
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd('FileType', {
   group = augroup 'close_with_q',

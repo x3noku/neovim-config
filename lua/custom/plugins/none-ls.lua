@@ -4,14 +4,10 @@ return {
     local nls = require 'null-ls'
 
     opts.sources = vim.list_extend(opts.sources or {}, {
-      -- nls.builtins.formatting.fish_indent,
-      -- nls.builtins.diagnostics.fish,
-      -- nls.builtins.formatting.stylua,
       -- nls.builtins.formatting.shfmt,
       nls.builtins.formatting.stylua,
-      nls.builtins.diagnostics.eslint_d,
-      nls.builtins.formatting.eslint_d,
-      nls.builtins.completion.spell,
+      nls.builtins.diagnostics.eslint,
+      -- nls.builtins.formatting.eslint,
     })
     opts.on_attach = function(client, bufnr)
       if client.supports_method 'textDocument/formatting' then

@@ -62,6 +62,7 @@ local servers = {
       completeFunctionCalls = true,
     },
   },
+  eslint = {},
 }
 
 return {
