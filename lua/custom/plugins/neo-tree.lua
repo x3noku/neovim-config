@@ -8,7 +8,7 @@ return {
   },
   opts = {
     window = {
-      position = 'current',
+      position = 'left',
     },
     filesystem = {
       filtered_items = {

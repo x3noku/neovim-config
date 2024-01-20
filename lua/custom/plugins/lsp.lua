@@ -11,6 +11,7 @@ local on_attach = function(client, bufnr)
     return ':IncRename ' .. vim.fn.expand '<cword>'
   end, { buffer = bufnr, desc = '[C]ode [R]ename', expr = true })
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>cd', vim.diagnostic.open_float, '[C]ode [D]iagnostic')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -67,10 +68,7 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'williamboman/mason.nvim' },
-    {
-      'williamboman/mason-lspconfig.nvim',
-      keys = { { '<leader>cm', '<cmd>Mason<cr>', desc = '[M]ason' } },
-    },
+    { 'williamboman/mason-lspconfig.nvim' },
     { 'folke/neodev.nvim' },
     {
       'smjonas/inc-rename.nvim',

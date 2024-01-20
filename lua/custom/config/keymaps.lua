@@ -81,7 +81,7 @@ vim.keymap.set('v', '>', '>gv')
 -- Managers
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 vim.keymap.set('n', '<leader>m', '<cmd>Mason<cr>', { desc = 'Mason' })
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree<cr>', { desc = 'Files', noremap = true })
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Files', noremap = true })
 vim.keymap.set('n', '<space>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit', noremap = true })
 
 -- todo: add git hunks hotkeys
