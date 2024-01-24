@@ -11,10 +11,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- stop eslint server when vim is closed
--- vim.api.nvim_create_autocmd('VimLeave', {
---   group = augroup 'eslint_stop',
---   command = '!eslint_d stop',
--- })
+vim.api.nvim_create_autocmd('VimLeave', {
+  group = augroup 'eslint_stop',
+  command = '!eslint_d stop',
+})
+vim.api.nvim_create_autocmd('VimLeave', {
+  group = augroup 'prettier_stop',
+  command = '!prettierd stop',
+})
 
 -- set theme when vim is loaded
 vim.api.nvim_create_autocmd('VimEnter', {
