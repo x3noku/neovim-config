@@ -31,7 +31,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 250
 
 -- Search
-vim.opt.ignorecase = true
+-- vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 
