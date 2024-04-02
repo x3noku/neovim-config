@@ -28,7 +28,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Telescope keymaps
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader><space>', function()
+  require('telescope.builtin').buffers { sort_lastused = true }
+end, { desc = '[ ] Find existing buffers' })
 -- vim.keymap.set('n', '<leader>/', function()
 --   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown())
 -- end, { desc = '[/] Fuzzily search in current buffer' })
@@ -44,8 +46,8 @@ vim.keymap.set('n', '<leader>fc', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear'
 vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 
 -- Buffers
-vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
-vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+-- vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
+-- vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
 
 -- Clipboard
 vim.keymap.set({ 'n', 'x' }, 'p', '<Plug>(YankyPutAfter)')

@@ -38,5 +38,28 @@ return {
   {
     'folke/tokyonight.nvim',
     lazy = true,
+    {
+      'scottmckendry/cyberdream.nvim',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require('cyberdream').setup {
+          -- Recommended - see "Configuring" below for more config options
+          transparent = false,
+          italic_comments = true,
+          hide_fillchars = true,
+          borderless_telescope = true,
+          terminal_colors = true,
+        }
+      end,
+    },
+  },
+  {
+    'tiagovla/tokyodark.nvim',
+    lazy = true,
+  },
+  {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
   },
 }

@@ -197,6 +197,36 @@ themes[#themes + 1] = {
   end,
 }
 
+themes[#themes + 1] = {
+  name = 'Cyberdream',
+  id = 'cyberdream',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'cyberdream'
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Tokyodark',
+  id = 'tokyodark',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'tokyodark'
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Poimandres',
+  id = 'poimandres',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'poimandres'
+  end,
+}
+
 local binds = '123456789abcdefghijklmnopqrstuvwxyz'
 local i = 1
 local light_themes = {}
