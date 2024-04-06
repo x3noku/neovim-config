@@ -15,7 +15,10 @@ require 'custom.config.options'
 require('lazy').setup({
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
-  { import = 'custom.plugins' },
+  { import = 'custom.plugins.ui' },
+  { import = 'custom.plugins.lang' },
+  { import = 'custom.plugins.editor' },
+  { import = 'custom.plugins.other' },
 }, {})
 require 'custom.config.keymaps'
 require 'custom.config.autocmds'
