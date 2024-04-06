@@ -30,9 +30,7 @@ return {
         nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
 
-        vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-          vim.lsp.buf.format()
-        end, { desc = 'Format current buffer with LSP' })
+        nmap('<leader>F', '<cmd>!eslint_d --cache "%" --fix<cr>', '[F]ormat')
       end,
       settings = {
         jsx_close_tag = {

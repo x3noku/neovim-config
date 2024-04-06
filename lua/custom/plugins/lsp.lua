@@ -17,7 +17,6 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-  stylua = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -78,6 +77,8 @@ return {
     require('mason-lspconfig').setup()
     require('neodev').setup()
 
+    local lspconfig = require 'lspconfig'
+
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
@@ -89,7 +90,7 @@ return {
 
     mason_lspconfig.setup_handlers {
       function(server_name)
-        require('lspconfig')[server_name].setup {
+        lspconfig[server_name].setup {
           capabilities = capabilities,
           on_attach = on_attach,
           settings = servers[server_name],
