@@ -3,9 +3,9 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc and 'LSP: ' .. desc })
   end
 
-  nmap('<leader>cr', function()
+  vim.keymap.set('n', '<leader>cr', function()
     return ':IncRename ' .. vim.fn.expand '<cword>'
-  end, '[C]ode [R]ename')
+  end, { buffer = bufnr, desc = '[C]ode [R]ename', expr = true })
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('<leader>cd', vim.diagnostic.open_float, '[C]ode [D]iagnostic')
 
