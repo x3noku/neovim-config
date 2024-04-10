@@ -111,25 +111,25 @@ themes[#themes + 1] = {
   end,
 }
 
-themes[#themes + 1] = {
-  name = 'Oh My Monokai',
-  id = 'oh-my-monokai',
-  mode = 'dark',
-  termguicolors = true,
-  command = function()
-    vim.cmd.colorscheme 'oh-my-monokai'
-  end,
-}
+-- themes[#themes + 1] = {
+--   name = 'Oh My Monokai',
+--   id = 'oh-my-monokai',
+--   mode = 'dark',
+--   termguicolors = true,
+--   command = function()
+--     vim.cmd.colorscheme 'oh-my-monokai'
+--   end,
+-- }
 
-themes[#themes + 1] = {
-  name = 'Melange',
-  id = 'melange',
-  mode = 'dark',
-  termguicolors = true,
-  command = function()
-    vim.cmd.colorscheme 'melange'
-  end,
-}
+-- themes[#themes + 1] = {
+--   name = 'Melange',
+--   id = 'melange',
+--   mode = 'dark',
+--   termguicolors = true,
+--   command = function()
+--     vim.cmd.colorscheme 'melange'
+--   end,
+-- }
 
 themes[#themes + 1] = {
   name = 'OneDark Darker',
@@ -157,25 +157,25 @@ themes[#themes + 1] = {
   end,
 }
 
-themes[#themes + 1] = {
-  name = 'Citruszest',
-  id = 'citruszest',
-  mode = 'dark',
-  termguicolors = true,
-  command = function()
-    vim.cmd.colorscheme 'citruszest'
-  end,
-}
+-- themes[#themes + 1] = {
+--   name = 'Citruszest',
+--   id = 'citruszest',
+--   mode = 'dark',
+--   termguicolors = true,
+--   command = function()
+--     vim.cmd.colorscheme 'citruszest'
+--   end,
+-- }
 
-themes[#themes + 1] = {
-  name = 'Sweetie',
-  id = 'sweetie',
-  mode = 'dark',
-  termguicolors = true,
-  command = function()
-    vim.cmd.colorscheme 'sweetie'
-  end,
-}
+-- themes[#themes + 1] = {
+--   name = 'Sweetie',
+--   id = 'sweetie',
+--   mode = 'dark',
+--   termguicolors = true,
+--   command = function()
+--     vim.cmd.colorscheme 'sweetie'
+--   end,
+-- }
 
 themes[#themes + 1] = {
   name = 'Oxocarbon',
@@ -197,15 +197,15 @@ themes[#themes + 1] = {
   end,
 }
 
-themes[#themes + 1] = {
-  name = 'Cyberdream',
-  id = 'cyberdream',
-  mode = 'dark',
-  termguicolors = true,
-  command = function()
-    vim.cmd.colorscheme 'cyberdream'
-  end,
-}
+-- themes[#themes + 1] = {
+--   name = 'Cyberdream',
+--   id = 'cyberdream',
+--   mode = 'dark',
+--   termguicolors = true,
+--   command = function()
+--     vim.cmd.colorscheme 'cyberdream'
+--   end,
+-- }
 
 themes[#themes + 1] = {
   name = 'Tokyodark',
@@ -217,13 +217,23 @@ themes[#themes + 1] = {
   end,
 }
 
+-- themes[#themes + 1] = {
+--   name = 'Poimandres',
+--   id = 'poimandres',
+--   mode = 'dark',
+--   termguicolors = true,
+--   command = function()
+--     vim.cmd.colorscheme 'poimandres'
+--   end,
+-- }
+
 themes[#themes + 1] = {
-  name = 'Poimandres',
-  id = 'poimandres',
+  name = 'Darkrose',
+  id = 'darkrose',
   mode = 'dark',
   termguicolors = true,
   command = function()
-    vim.cmd.colorscheme 'poimandres'
+    vim.cmd.colorscheme 'darkrose'
   end,
 }
 
