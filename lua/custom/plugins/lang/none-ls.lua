@@ -1,3 +1,7 @@
+local group = vim.api.nvim_create_augroup('lsp_format_on_save', { clear = false })
+local event = 'BufWritePre' -- or "BufWritePost"
+local async = event == 'BufWritePost'
+
 return {
   'nvimtools/none-ls.nvim',
   opts = function(_, opts)
@@ -9,16 +13,14 @@ return {
     })
     opts.on_attach = function(client, bufnr)
       if client.supports_method 'textDocument/formatting' then
-        vim.api.nvim_create_autocmd('BufWritePre', {
+        vim.api.nvim_clear_autocmds { buffer = bufnr, group = group }
+        vim.api.nvim_create_autocmd(event, {
           buffer = bufnr,
+          group = group,
           callback = function()
-            vim.lsp.buf.format {
-              bufnr = bufnr,
-              filter = function(c)
-                return c.id == client.id
-              end,
-            }
+            vim.lsp.buf.format { bufnr = bufnr, async = async }
           end,
+          desc = 'LSP: Format on save',
         })
       end
     end
