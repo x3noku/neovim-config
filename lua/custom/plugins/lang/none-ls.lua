@@ -10,6 +10,7 @@ return {
     opts.sources = vim.list_extend(opts.sources or {}, {
       -- nls.builtins.formatting.shfmt,
       nls.builtins.formatting.stylua,
+      nls.builtins.formatting.prettierd,
     })
     opts.on_attach = function(client, bufnr)
       if client.supports_method 'textDocument/formatting' then
