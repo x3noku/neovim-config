@@ -11,6 +11,7 @@ return {
       -- nls.builtins.formatting.shfmt,
       nls.builtins.formatting.stylua,
       nls.builtins.formatting.prettierd,
+      nls.builtins.formatting.clang_format,
     })
     opts.on_attach = function(client, bufnr)
       if client.supports_method 'textDocument/formatting' then
