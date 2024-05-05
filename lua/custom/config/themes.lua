@@ -4,6 +4,19 @@ local M = {}
 local themes = {}
 local thememap = { name = '[T]heme' }
 
+local function read_theme()
+  local file = io.open(os.getenv 'HOME' .. '/.config/nvim/.theme', 'r')
+
+  if file then
+    local id = file:read()
+    file:close()
+
+    return id
+  end
+
+  return nil
+end
+
 local function write_theme(id)
   local file = io.open(os.getenv 'HOME' .. '/.config/nvim/.theme', 'w')
   if file ~= nil then
@@ -30,12 +43,68 @@ local function random_theme(subthemes)
   end
 end
 
-function M.read()
-  local file = io.open(os.getenv 'HOME' .. '/.config/nvim/.theme', 'r')
-  if file then
-    local id = file:read()
-    file:close()
+local function setup_binds()
+  local binds = '123456789abcdefghijklmnopqrstuvwxyz'
+  local i = 1
+  local light_themes = {}
+  local dark_themes = {}
 
+  thememap[binds:sub(i, i)] = {
+    function()
+      M.set(random_theme(light_themes))
+    end,
+    'LIGHT THEMES',
+  }
+  i = i + 1
+
+  for _, theme in pairs(themes) do
+    if theme.mode == 'light' then
+      thememap[binds:sub(i, i)] = {
+        function()
+          M.set(theme)
+        end,
+        (theme.id == read_theme() and '✔ ' or '  ') .. theme.name,
+      }
+      light_themes[#light_themes + 1] = theme
+
+      i = i + 1
+    end
+  end
+
+  while i % 4 ~= 1 do
+    thememap[binds:sub(i, i)] = { function() end, '' }
+    i = i + 1
+  end
+
+  thememap[binds:sub(i, i)] = {
+    function()
+      M.set(random_theme(dark_themes))
+    end,
+    'DARK THEMES',
+  }
+  i = i + 1
+
+  for _, theme in pairs(themes) do
+    if theme.mode == 'dark' then
+      thememap[binds:sub(i, i)] = {
+        function()
+          M.set(theme)
+        end,
+        (theme.id == read_theme() and '✔ ' or '  ') .. theme.name,
+      }
+      dark_themes[#dark_themes + 1] = theme
+
+      i = i + 1
+    end
+  end
+
+  require('which-key').register(thememap, { prefix = '<leader>ut' })
+end
+
+function M.read()
+  local id = read_theme()
+
+  if id then
     for _, theme in pairs(themes) do
       if theme.id == id then
         return theme
@@ -52,6 +121,7 @@ function M.set(theme)
   theme.command()
 
   write_theme(theme.id)
+  setup_binds()
   vim.notify('Theme set to ' .. theme.name)
 end
 
@@ -187,60 +257,6 @@ themes[#themes + 1] = {
   end,
 }
 
-local binds = '123456789abcdefghijklmnopqrstuvwxyz'
-local i = 1
-local light_themes = {}
-local dark_themes = {}
-
-thememap[binds:sub(i, i)] = {
-  function()
-    M.set(random_theme(light_themes))
-  end,
-  'LIGHT THEMES',
-}
-i = i + 1
-
-for _, theme in pairs(themes) do
-  if theme.mode == 'light' then
-    thememap[binds:sub(i, i)] = {
-      function()
-        M.set(theme)
-      end,
-      theme.name,
-    }
-    light_themes[#light_themes + 1] = theme
-
-    i = i + 1
-  end
-end
-
-while i % 4 ~= 1 do
-  thememap[binds:sub(i, i)] = { function() end, '' }
-  i = i + 1
-end
-
-thememap[binds:sub(i, i)] = {
-  function()
-    M.set(random_theme(dark_themes))
-  end,
-  'DARK THEMES',
-}
-i = i + 1
-
-for _, theme in pairs(themes) do
-  if theme.mode == 'dark' then
-    thememap[binds:sub(i, i)] = {
-      function()
-        M.set(theme)
-      end,
-      theme.name,
-    }
-    dark_themes[#dark_themes + 1] = theme
-
-    i = i + 1
-  end
-end
-
-require('which-key').register(thememap, { prefix = '<leader>ut' })
+setup_binds()
 
 return M
