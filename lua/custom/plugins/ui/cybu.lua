@@ -19,11 +19,14 @@ return {
         separator = ' ',
         prefix = '…',
         padding = 1,
-        hide_buffer_id = true,
+        hide_buffer_id = false,
         devicons = {
           enabled = true,
           colored = true,
           truncate = true,
+        },
+        highlights = {
+          current_buffer = 'Tag',
         },
       },
       behavior = {
