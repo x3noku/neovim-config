@@ -3,6 +3,14 @@ return {
     'rmehri01/onenord.nvim',
     lazy = true,
   },
+  {
+    'DAddYE/soda.vim',
+    lazy = true,
+  },
+  {
+    'cseelus/vim-colors-lanai',
+    lazy = true,
+  },
 
   {
     'sainnhe/sonokai',
@@ -33,7 +41,7 @@ return {
     lazy = true,
   },
   {
-    'water-sucks/darkrose.nvim',
+    'ayu-theme/ayu-vim',
     lazy = true,
   },
 }

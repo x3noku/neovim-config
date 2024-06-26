@@ -1,5 +1,6 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', 'jj', '<esc>', { silent = true })
+vim.keymap.set('i', 'оо', '<esc>', { silent = true })
 vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>', { desc = 'Quit all' })
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 

@@ -136,6 +136,26 @@ themes[#themes + 1] = {
   end,
 }
 
+themes[#themes + 1] = {
+  name = 'Soda',
+  id = 'soda',
+  mode = 'light',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'soda'
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Lanai',
+  id = 'lanai',
+  mode = 'light',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'lanai'
+  end,
+}
+
 -- dark themes
 themes[#themes + 1] = {
   name = 'Sonokai Andromeda',
@@ -248,12 +268,12 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-  name = 'Darkrose',
-  id = 'darkrose',
+  name = 'Ayu',
+  id = 'ayu',
   mode = 'dark',
   termguicolors = true,
   command = function()
-    vim.cmd.colorscheme 'darkrose'
+    vim.cmd.colorscheme 'ayu'
   end,
 }
 
