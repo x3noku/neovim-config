@@ -2,7 +2,7 @@
 
 local M = {}
 local themes = {}
-local thememap = { name = '[T]heme' }
+local thememap = { '<leader>ut', desc = '[T]heme' }
 
 local function read_theme()
   local file = io.open(os.getenv 'HOME' .. '/.config/nvim/.theme', 'r')
@@ -49,22 +49,24 @@ local function setup_binds()
   local light_themes = {}
   local dark_themes = {}
 
-  thememap[binds:sub(i, i)] = {
+  table.insert(thememap, {
+    '<leader>ut' .. binds:sub(i, i),
     function()
       M.set(random_theme(light_themes))
     end,
-    'LIGHT THEMES',
-  }
+    desc = 'LIGHT THEMES',
+  })
   i = i + 1
 
   for _, theme in pairs(themes) do
     if theme.mode == 'light' then
-      thememap[binds:sub(i, i)] = {
+      table.insert(thememap, {
+        '<leader>ut' .. binds:sub(i, i),
         function()
           M.set(theme)
         end,
-        (theme.id == read_theme() and '✔ ' or '  ') .. theme.name,
-      }
+        desc = (theme.id == read_theme() and '✔ ' or '  ') .. theme.name,
+      })
       light_themes[#light_themes + 1] = theme
 
       i = i + 1
@@ -72,33 +74,39 @@ local function setup_binds()
   end
 
   while i % 4 ~= 1 do
-    thememap[binds:sub(i, i)] = { function() end, '' }
+    table.insert(thememap, {
+      '<leader>ut' .. binds:sub(i, i),
+      function() end,
+    })
     i = i + 1
   end
 
-  thememap[binds:sub(i, i)] = {
+  table.insert(thememap, {
+    '<leader>ut' .. binds:sub(i, i),
     function()
       M.set(random_theme(dark_themes))
     end,
-    'DARK THEMES',
-  }
+    desc = 'DARK THEMES',
+  })
   i = i + 1
 
   for _, theme in pairs(themes) do
     if theme.mode == 'dark' then
-      thememap[binds:sub(i, i)] = {
+      table.insert(thememap, {
+        '<leader>ut' .. binds:sub(i, i),
         function()
           M.set(theme)
         end,
-        (theme.id == read_theme() and '✔ ' or '  ') .. theme.name,
-      }
+        desc = (theme.id == read_theme() and '✔ ' or '  ') .. theme.name,
+      })
       dark_themes[#dark_themes + 1] = theme
 
       i = i + 1
     end
   end
 
-  require('which-key').register(thememap, { prefix = '<leader>ut' })
+  require('which-key').add(thememap, { prefix = '<leader>ut' })
+  -- require('which-key').register(thememap, { prefix = '<leader>ut' })
 end
 
 function M.read()
