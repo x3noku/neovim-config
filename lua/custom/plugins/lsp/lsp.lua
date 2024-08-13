@@ -1,29 +1,3 @@
-local on_attach = function(_, bufnr)
-  local nmap = function(keys, func, desc)
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc and 'LSP: ' .. desc })
-  end
-
-  vim.keymap.set('n', '<leader>cr', function()
-    return ':IncRename ' .. vim.fn.expand '<cword>'
-  end, { buffer = bufnr, desc = '[C]ode [R]ename', expr = true })
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-  nmap('<leader>cd', vim.diagnostic.open_float, '[C]ode [D]iagnostic')
-
-  nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-end
-
-local servers = {
-  lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-      diagnostics = { disable = { 'missing-fields' } },
-    },
-  },
-}
-
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -75,7 +49,12 @@ return {
     require('mason-lspconfig').setup()
     require('neodev').setup()
 
-    local lspconfig = require 'lspconfig'
+    local default_server = require 'custom.plugins.lsp.servers.default'
+    local lua_ls = require 'custom.plugins.lsp.servers.lua_ls'
+
+    local servers = {
+      lua_ls = lua_ls,
+    }
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -88,12 +67,11 @@ return {
 
     mason_lspconfig.setup_handlers {
       function(server_name)
-        lspconfig[server_name].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = servers[server_name],
-          filetypes = (servers[server_name] or {}).filetypes,
-        }
+        if not servers[server_name] then
+          default_server.setup(server_name, capabilities)
+        else
+          servers[server_name].setup(server_name, capabilities)
+        end
       end,
     }
   end,
