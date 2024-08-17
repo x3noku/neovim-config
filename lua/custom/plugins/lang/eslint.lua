@@ -1,12 +1,12 @@
-return {}
+-- return {}
 
---[[ return {
+return {
   'MunifTanjim/eslint.nvim',
   config = function()
     local eslint = require 'eslint'
 
     eslint.setup {
-      bin = 'eslint', -- eslint | eslint_d
+      bin = 'eslint_d', -- eslint | eslint_d
       code_actions = {
         enable = true,
         apply_on_save = {
@@ -25,4 +25,4 @@ return {}
       },
     }
   end,
-} ]]
+}
