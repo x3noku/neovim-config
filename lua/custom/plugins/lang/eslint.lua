@@ -6,7 +6,7 @@ return {
     local eslint = require 'eslint'
 
     eslint.setup {
-      bin = 'eslint_d', -- eslint | eslint_d
+      bin = 'eslint', -- eslint | eslint_d
       code_actions = {
         enable = true,
         apply_on_save = {
@@ -15,13 +15,13 @@ return {
         },
         disable_rule_comment = {
           enable = true,
-          location = 'separate_line', -- or `same_line`
+          location = 'separate_line', -- separate_line | same_line
         },
       },
       diagnostics = {
         enable = true,
         report_unused_disable_directives = false,
-        run_on = 'type', -- or `save`
+        run_on = 'type', -- type | save
       },
     }
   end,
