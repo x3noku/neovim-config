@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
   group = augroup 'set_theme',
   callback = function()
     vim.defer_fn(function()
-      local themes = require 'custom.config.themes'
+      local themes = require 'config.themes'
       themes.set(themes.read())
     end, 0)
   end,

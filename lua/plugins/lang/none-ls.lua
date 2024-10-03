@@ -10,7 +10,7 @@ return {
     opts.sources = vim.list_extend(opts.sources or {}, {
       -- nls.builtins.formatting.shfmt,
       nls.builtins.formatting.stylua,
-      nls.builtins.formatting.prettierd,
+      -- nls.builtins.formatting.prettierd,
       nls.builtins.diagnostics.eslint_d,
       -- nls.builtins.formatting.prettier,
       nls.builtins.formatting.clang_format,

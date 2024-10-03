@@ -49,8 +49,8 @@ return {
     require('mason-lspconfig').setup()
     require('neodev').setup()
 
-    local default_server = require 'custom.plugins.lsp.servers.default'
-    local lua_ls = require 'custom.plugins.lsp.servers.lua_ls'
+    local default_server = require 'plugins.lsp.servers.default'
+    local lua_ls = require 'plugins.lsp.servers.lua_ls'
 
     local servers = {
       lua_ls = lua_ls,
