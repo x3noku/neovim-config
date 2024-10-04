@@ -11,8 +11,8 @@ return {
           require('statuscol').setup {
             relculright = false, -- whether to right-align the cursor line number with 'relativenumber' set
             segments = {
-              { text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
-              { text = { '%s' }, click = 'v:lua.ScSa' },
+              { text = { builtin.foldfunc },      click = 'v:lua.ScFa' },
+              { text = { '%s' },                  click = 'v:lua.ScSa' },
               { text = { builtin.lnumfunc, ' ' }, click = 'v:lua.ScLa' },
             },
           }

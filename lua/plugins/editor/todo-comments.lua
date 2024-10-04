@@ -5,9 +5,17 @@ return {
     signs = true,
     keywords = {
       TODO = { icon = ' ', color = 'info', alt = { 'ToDo', 'todo' } },
-      FIXME = { icon = ' ', color = 'error', alt = { 'FixMe', 'fixme', 'BUG', 'bug', 'FIXIT', 'FixIt', 'fixit', 'ISSUE', 'issue' } },
+      FIXME = {
+        icon = ' ',
+        color = 'error',
+        alt = { 'FixMe', 'fixme', 'BUG', 'bug', 'FIXIT', 'FixIt', 'fixit', 'ISSUE', 'issue' },
+      },
       HACK = { icon = ' ', color = 'warning', alt = { 'Hack', 'hack' } },
-      WARN = { icon = ' ', color = 'warning', alt = { 'WARNING', 'Warning', 'warning', 'Warn', 'warn', 'XXX', 'xxx' } },
+      WARN = {
+        icon = ' ',
+        color = 'warning',
+        alt = { 'WARNING', 'Warning', 'warning', 'Warn', 'warn', 'XXX', 'xxx' },
+      },
       PERF = {
         -- icon = ' ',
         icon = '⏲ ',

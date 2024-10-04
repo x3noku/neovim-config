@@ -33,11 +33,11 @@ return {
         mode = {
           default = {
             switch = 'immediate', -- immediate, on_close
-            view = 'paging', -- paging, rolling
+            view = 'paging',      -- paging, rolling
           },
           last_used = {
             switch = 'immediate', -- immediate, on_close
-            view = 'paging', -- paging, rolling
+            view = 'paging',      -- paging, rolling
           },
         },
         show_on_autocmd = false,

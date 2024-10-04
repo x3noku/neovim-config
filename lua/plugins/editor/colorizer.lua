@@ -9,8 +9,8 @@ return {
         typescriptreact = { mode = 'background' },
       },
       user_default_options = {
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        mode = 'foreground', -- Set the display mode.
+        RRGGBBAA = true,                                -- #RRGGBBAA hex codes
+        mode = 'foreground',                            -- Set the display mode.
         tailwind = true,
         sass = { enable = false, parsers = { 'css' } }, -- Enable sass colors
         virtualtext = '■',
