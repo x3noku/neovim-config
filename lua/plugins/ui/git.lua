@@ -7,8 +7,27 @@ return {
     },
   },
   {
-    'tpope/vim-fugitive',
+    'dinhhuy258/git.nvim',
     event = 'VeryLazy',
+    config = function()
+      require('git').setup {
+        default_mappings = false,
+        target_branch = 'main',
+      }
+
+      vim.keymap.set('n', '<leader>go', "<cmd>lua require('git.browse').open(false)<cr>", {
+        desc = '[G]it [O]pen',
+        noremap = true,
+        silent = true,
+        expr = false,
+      })
+      vim.keymap.set('x', '<leader>go', ":<C-u> lua require('git.browse').open(true)<cr>", {
+        desc = '[G]it [O]pen',
+        noremap = true,
+        silent = true,
+        expr = false,
+      })
+    end,
   },
   {
     'lewis6991/gitsigns.nvim',
