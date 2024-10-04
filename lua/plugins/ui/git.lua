@@ -25,8 +25,6 @@ return {
       current_line_blame = true,
       current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
-
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
         vim.keymap.set({ 'n', 'v' }, ']c', function()

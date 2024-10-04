@@ -20,33 +20,43 @@ vim.keymap.set('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move line down' })
 vim.keymap.set('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'Move line up' })
 vim.keymap.set('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'Move line down' })
 vim.keymap.set('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move line up' })
+vim.keymap.set('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'Move lines Down' })
+vim.keymap.set('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move lines Up' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 
 -- Telescope keymaps
--- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', function()
   require('telescope.builtin').buffers { sort_lastused = true }
 end, { desc = '[ ] Find existing buffers' })
+-- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 -- vim.keymap.set('n', '<leader>/', function()
 --   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown())
 -- end, { desc = '[/] Fuzzily search in current buffer' })
--- vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
--- vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind current [W]ord' })
-vim.keymap.set('n', '<leader>fg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = '[F]ind by [G]rep' })
+vim.keymap.set(
+  'n',
+  '<leader>fg',
+  require('telescope').extensions.live_grep_args.live_grep_args,
+  { desc = '[F]ind by [G]rep' }
+)
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
 vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
 vim.keymap.set('n', '<leader>fc', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 
--- Buffers
--- vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>', { desc = 'Prev buffer' })
--- vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+-- Clear search, diff update and redraw
+-- taken from runtime/lua/_editor.lua
+vim.keymap.set(
+  'n',
+  '<leader>ur',
+  '<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>',
+  { desc = 'Redraw / Clear hlsearch / Diff Update' }
+)
 
 -- Clipboard
 vim.keymap.set({ 'n', 'x' }, 'p', '<Plug>(YankyPutAfter)')
@@ -82,23 +92,35 @@ vim.keymap.set('v', '>', '>gv')
 -- Managers
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 vim.keymap.set('n', '<leader>m', '<cmd>Mason<cr>', { desc = 'Mason' })
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Files', noremap = true })
-vim.keymap.set('n', '<space>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit', noremap = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>e', '<cmd>Neotree toggle<cr>', { desc = 'Files', noremap = true })
 
--- todo: add git hunks hotkeys
+-- Lazygit
+vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit', noremap = true })
+vim.keymap.set('n', '<leader>gf', '<cmd>LazyGitFilterCurrentFile<cr>', { desc = '[G]it [F]ile History' })
+vim.keymap.set('n', '<leader>gd', require('gitsigns').diffthis, { desc = '[G]it [D]iff' })
+vim.keymap.set('n', '<leader>gD', function()
+  require('gitsigns').diffthis '~'
+end, { desc = '[G]it [D]iff ~' })
 
--- -- Floating terminal
--- local lazyterm = function() Util.terminal(nil, { cwd = Util.root() }) end
--- map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
--- map("n", "<leader>fT", function() Util.terminal() end, { desc = "Terminal (cwd)" })
--- map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
--- map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
---
--- -- Terminal Mappings
--- map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
--- map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to left window" })
--- map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to lower window" })
--- map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to upper window" })
--- map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to right window" })
--- map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
--- map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+-- Git hunks
+vim.keymap.set('n', '<leader>hs', require('gitsigns').stage_hunk, { desc = '[H]unk [S]tage' })
+vim.keymap.set('n', '<leader>hr', require('gitsigns').stage_hunk, { desc = '[H]unk [R]eset' })
+vim.keymap.set('v', '<leader>hs', function()
+  require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+end, { desc = '[H]unk [S]tage' })
+vim.keymap.set('v', '<leader>hr', function()
+  require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+end, { desc = '[H]unk [R]eset' })
+vim.keymap.set('n', '<leader>hu', require('gitsigns').undo_stage_hunk, { desc = '[H]unk Stage [U]ndo' })
+vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { desc = '[H]unk [P]review' })
+
+vim.keymap.set('n', '<leader>hd', require('gitsigns').toggle_deleted, { desc = '[H]ighlight [D]eleted' })
+vim.keymap.set('n', '<leader>hl', require('gitsigns').toggle_linehl, { desc = '[H]ighlight [L]ines' })
+vim.keymap.set('n', '<leader>hw', require('gitsigns').toggle_word_diff, { desc = '[H]ighlight [W]ords' })
+vim.keymap.set('n', '<leader>ha', function()
+  require('gitsigns').toggle_deleted()
+  require('gitsigns').toggle_linehl()
+  require('gitsigns').toggle_word_diff()
+end, { desc = '[H]ighlight [A]all' })
+
+vim.keymap.set({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
