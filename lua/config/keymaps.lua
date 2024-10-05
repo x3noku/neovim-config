@@ -46,6 +46,19 @@ vim.keymap.set(
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
 vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odos' })
+vim.keymap.set({ 'n', 'v' }, '<leader>fR', function()
+  local has_grug, grug = pcall(require, 'grug-far')
+
+  if has_grug then
+    local ext = vim.bo.buftype == '' and vim.fn.expand '%:e'
+    grug.open {
+      transient = true,
+      prefills = {
+        filesFilter = ext and ext ~= '' and '*.' .. ext or nil,
+      },
+    }
+  end
+end, { desc = '[F]ind and [R]epalce' })
 vim.keymap.set('n', '<leader>fc', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 vim.keymap.set('n', '<esc>', '<cmd>noh<cr><esc>', { desc = '[F]ind [C]lear' })
 
