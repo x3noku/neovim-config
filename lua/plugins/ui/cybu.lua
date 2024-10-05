@@ -3,7 +3,6 @@ return {
   branch = 'main',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons',
   },
   config = function()
     require('cybu').setup {

@@ -1,6 +1,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Icons
+vim.g.iconset = 'nvim-web-devicons' -- `mini.icons` or `nvim-web-devicons`
+
 -- Cursor
 vim.opt.cursorline = true     -- highlight current line
 vim.opt.scrolloff = 4         -- cursor margin
