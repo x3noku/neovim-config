@@ -22,6 +22,8 @@ local settings = nil
 
 local filetypes = nil
 
+M.enabled = true
+
 M.setup = function(server_name, capabilities)
   lspconfig[server_name].setup {
     capabilities = capabilities,
