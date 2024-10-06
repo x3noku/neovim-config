@@ -33,12 +33,6 @@ return {
           nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
         end,
-        settings = {
-          jsx_close_tag = {
-            enable = true,
-            filetypes = { 'javascriptreact', 'typescriptreact' },
-          },
-        },
       }
     end,
   },
