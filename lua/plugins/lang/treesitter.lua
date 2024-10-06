@@ -2,7 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     { 'nvim-treesitter/nvim-treesitter-context' },
-    { 'windwp/nvim-ts-autotag', event = 'InsertEnter', opts = {} },
+    { 'windwp/nvim-ts-autotag',                 event = 'InsertEnter', opts = {} },
   },
   build = ':TSUpdate',
   config = function()
@@ -37,9 +37,6 @@ return {
       -- auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
-      autotag = {
-        enable = true,
-      },
     }
 
     require('treesitter-context').setup {
