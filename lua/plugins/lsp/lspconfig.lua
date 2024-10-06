@@ -79,9 +79,13 @@ return {
     -- vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
     local default_server = require 'plugins.lsp.servers.default'
+    local typescript = require 'plugins.lsp.servers.typescript'
     local lua_ls = require 'plugins.lsp.servers.lua_ls'
 
     local servers = {
+      tsserver = { enabled = false },
+      ts_ls = { enabled = false },
+      vtsls = typescript,
       lua_ls = lua_ls,
     }
 
