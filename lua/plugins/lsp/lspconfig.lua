@@ -79,14 +79,21 @@ return {
     -- vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
     local default_server = require 'plugins.lsp.servers.default'
-    local typescript = require 'plugins.lsp.servers.typescript'
+    local jsonls = require 'plugins.lsp.servers.jsonls'
     local lua_ls = require 'plugins.lsp.servers.lua_ls'
+    local prismals = require 'plugins.lsp.servers.prismals'
+    local tailwindcss = require 'plugins.lsp.servers.tailwindcss'
+    local vtsls = require 'plugins.lsp.servers.vtsls'
 
     local servers = {
       tsserver = { enabled = false },
       ts_ls = { enabled = false },
-      vtsls = typescript,
+
+      jsonls = jsonls,
       lua_ls = lua_ls,
+      prismals = prismals,
+      tailwindcss = tailwindcss,
+      vtsls = vtsls,
     }
 
     local has_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
@@ -99,9 +106,8 @@ return {
     )
 
     -- get all the servers that are available through mason-lspconfig
-    local have_mason, mason_lspconfig = pcall(require, 'mason-lspconfig')
-    local all_mslp_servers = have_mason
-        and vim.tbl_keys(require('mason-lspconfig.mappings.server').lspconfig_to_package)
+    local has_mason, mason_lspconfig = pcall(require, 'mason-lspconfig')
+    local all_mslp_servers = has_mason and vim.tbl_keys(require('mason-lspconfig.mappings.server').lspconfig_to_package)
         or {}
 
     local ensure_installed = {} ---@type string[]
@@ -111,7 +117,7 @@ return {
       end
     end
 
-    if have_mason then
+    if has_mason then
       mason_lspconfig.setup { ensure_installed = ensure_installed }
 
       mason_lspconfig.setup_handlers {
