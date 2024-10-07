@@ -1,4 +1,4 @@
-local eslint = require 'plugins.lsp.eslint'
+-- local eslint = require 'plugins.lsp.eslint'
 
 return {
   'williamboman/mason.nvim',
@@ -12,7 +12,8 @@ return {
     ensure_installed = {
       'stylua',
       'shfmt',
-      eslint.mason_install,
+      'eslint-lsp',
+      'eslint_d',
     },
   },
   config = function(_, opts)
@@ -25,11 +26,6 @@ return {
         if not p:is_installed() then
           p:install()
         end
-      end
-
-      local p = mr.get_package(eslint.mason_remove)
-      if p:is_installed() then
-        p:uninstall()
       end
     end)
   end,

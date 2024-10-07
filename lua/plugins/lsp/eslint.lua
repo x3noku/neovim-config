@@ -1,33 +1,20 @@
---- @type 'eslint' | 'eslint_d'
-local bin = 'eslint_d' -- usually `eslint` works much slower
+-- We are using `eslint` for diagnostics as it works better
+-- But for formatting and fixing problems `eslint_d` is used as it is much faster
 
 return {
   'MunifTanjim/eslint.nvim',
-
-  mason_install = bin == 'eslint' and 'eslint-lsp' or 'eslint_d',
-  mason_remove = bin ~= 'eslint' and 'eslint-lsp' or 'eslint_d',
-
   dependencies = {
     'nvimtools/none-ls.nvim',
     dependencies = { 'nvimtools/none-ls-extras.nvim' },
     opts = function(_, opts)
-      if bin == 'eslint' then
-        opts.sources = vim.list_extend(opts.sources or {}, {
-          require('none-ls.formatting.' .. bin),
-        })
-      end
-
-      if bin == 'eslint_d' then
-        opts.sources = vim.list_extend(opts.sources or {}, {
-          require('none-ls.diagnostics.' .. bin),
-          require('none-ls.formatting.' .. bin),
-        })
-      end
+      opts.sources = vim.list_extend(opts.sources or {}, {
+        require 'none-ls.formatting.eslint_d',
+      })
     end,
   },
   config = function()
     require('eslint').setup {
-      bin = bin,
+      bin = 'eslint',
       code_actions = {
         enable = true,
         apply_on_save = {
