@@ -77,6 +77,7 @@ local function setup_binds()
     table.insert(thememap, {
       '<leader>ut' .. binds:sub(i, i),
       function() end,
+      desc = '',
     })
     i = i + 1
   end
@@ -106,7 +107,6 @@ local function setup_binds()
   end
 
   require('which-key').add(thememap, { prefix = '<leader>ut' })
-  -- require('which-key').register(thememap, { prefix = '<leader>ut' })
 end
 
 function M.read()
