@@ -9,6 +9,11 @@ local settings = {
     filetypes_exclude = { 'markdown' },
     filetypes_include = {},
   },
+  tailwindCSS = {
+    experimental = {
+      classRegex = { 'cva\\(([^)]*)\\)', '["\'`]([^"\'`]*).*?["\'`]' },
+    },
+  },
 }
 
 local filetypes = nil
