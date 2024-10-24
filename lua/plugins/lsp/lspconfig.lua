@@ -79,21 +79,19 @@ return {
     -- vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
     local default_server = require 'plugins.lsp.servers.default'
-    local jsonls = require 'plugins.lsp.servers.jsonls'
-    local lua_ls = require 'plugins.lsp.servers.lua_ls'
-    local prismals = require 'plugins.lsp.servers.prismals'
-    local tailwindcss = require 'plugins.lsp.servers.tailwindcss'
-    local vtsls = require 'plugins.lsp.servers.vtsls'
 
     local servers = {
       tsserver = { enabled = false },
       ts_ls = { enabled = false },
 
-      jsonls = jsonls,
-      lua_ls = lua_ls,
-      prismals = prismals,
-      tailwindcss = tailwindcss,
-      vtsls = vtsls,
+      css_variables = require 'plugins.lsp.servers.css_variables',
+      cssls = require 'plugins.lsp.servers.cssls',
+      cssmodules_ls = require 'plugins.lsp.servers.cssmodules_ls',
+      jsonls = require 'plugins.lsp.servers.jsonls',
+      lua_ls = require 'plugins.lsp.servers.lua_ls',
+      prismals = require 'plugins.lsp.servers.prismals',
+      tailwindcss = require 'plugins.lsp.servers.tailwindcss',
+      vtsls = require 'plugins.lsp.servers.vtsls',
     }
 
     local has_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
