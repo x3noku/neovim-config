@@ -10,8 +10,15 @@ local settings = {
     filetypes_include = {},
   },
   tailwindCSS = {
+    classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
     experimental = {
-      classRegex = { 'cva\\(([^)]*)\\)', '["\'`]([^"\'`]*).*?["\'`]' },
+      classRegex = {
+        'cva\\(([^)]*)\\)',
+        '\\b\\w+[cC]lassName\\s*=\\s*["\']([^"\']*)["\']',
+        '\\b\\w+[cC]lassName\\s*=\\s*`([^`]*)`',
+        '[\\w]+[cC]lassName["\']?\\s*:\\s*["\']([^"\']*)["\']',
+        '[\\w]+[cC]lassName["\']?\\s*:\\s*`([^`]*)`',
+      },
     },
   },
 }
