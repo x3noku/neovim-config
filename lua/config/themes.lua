@@ -73,7 +73,7 @@ local function setup_binds()
     end
   end
 
-  while i % 4 ~= 1 do
+  while i % vim.g.wk_theme_lines ~= 1 do
     table.insert(thememap, {
       '<leader>ut' .. binds:sub(i, i),
       function() end,
@@ -145,22 +145,13 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-  name = 'Soda',
-  id = 'soda',
+  name = 'Bluloco',
+  id = 'bluloco-light',
   mode = 'light',
   termguicolors = true,
   command = function()
-    vim.cmd.colorscheme 'soda'
-  end,
-}
-
-themes[#themes + 1] = {
-  name = 'Lanai',
-  id = 'lanai',
-  mode = 'light',
-  termguicolors = true,
-  command = function()
-    vim.cmd.colorscheme 'lanai'
+    require('bluloco').setup { style = 'light' }
+    vim.cmd.colorscheme 'bluloco-light'
   end,
 }
 
@@ -215,9 +206,7 @@ themes[#themes + 1] = {
   mode = 'dark',
   termguicolors = true,
   command = function()
-    require('onedark').setup {
-      style = 'darker',
-    }
+    require('onedark').setup { style = 'darker' }
     require('onedark').load()
   end,
 }
@@ -228,9 +217,7 @@ themes[#themes + 1] = {
   mode = 'dark',
   termguicolors = true,
   command = function()
-    require('onedark').setup {
-      style = 'warmer',
-    }
+    require('onedark').setup { style = 'warmer' }
     require('onedark').load()
   end,
 }
@@ -282,6 +269,22 @@ themes[#themes + 1] = {
   termguicolors = true,
   command = function()
     vim.cmd.colorscheme 'ayu'
+  end,
+}
+
+themes[#themes + 1] = {
+  name = 'Monokai Pro',
+  id = 'monokai-pro',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    require('monokai-pro').setup {
+      terminal_colors = false,
+      devicons = true,
+      filter = 'ristretto',
+    }
+
+    vim.cmd.colorscheme 'monokai-pro'
   end,
 }
 

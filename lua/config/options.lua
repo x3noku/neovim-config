@@ -3,6 +3,7 @@ vim.g.maplocalleader = ' '
 
 -- Icons
 vim.g.iconset = 'nvim-web-devicons' -- `mini.icons` or `nvim-web-devicons`
+vim.g.wk_theme_lines = 3            -- height of whick-key theme pane
 
 -- Cursor
 vim.opt.cursorline = true     -- highlight current line

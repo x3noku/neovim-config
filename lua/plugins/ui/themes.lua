@@ -4,12 +4,9 @@ return {
     lazy = true,
   },
   {
-    'DAddYE/soda.vim',
+    'uloco/bluloco.nvim',
     lazy = true,
-  },
-  {
-    'cseelus/vim-colors-lanai',
-    lazy = true,
+    dependencies = { 'rktjmp/lush.nvim' },
   },
 
   {
@@ -42,6 +39,10 @@ return {
   },
   {
     'ayu-theme/ayu-vim',
+    lazy = true,
+  },
+  {
+    'loctvl842/monokai-pro.nvim',
     lazy = true,
   },
 }
