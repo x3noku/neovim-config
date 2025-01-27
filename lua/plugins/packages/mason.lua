@@ -1,4 +1,4 @@
-local eslint = require 'plugins.lsp.eslint'
+local eslint = require 'plugins.lang.eslint'
 
 return {
   'williamboman/mason.nvim',
@@ -12,6 +12,7 @@ return {
     ensure_installed = {
       'stylua',
       'shfmt',
+      'biome',
       eslint.mason_install,
     },
   },

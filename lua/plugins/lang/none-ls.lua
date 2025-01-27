@@ -11,6 +11,7 @@ return {
     opts.sources = vim.list_extend(opts.sources or {}, {
       nls.builtins.formatting.shfmt,
       nls.builtins.formatting.stylua,
+      nls.builtins.formatting.biome,
       nls.builtins.formatting.prettierd.with {
         env = function(params)
           return {
