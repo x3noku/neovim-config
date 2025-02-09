@@ -13,6 +13,8 @@ return {
       'stylua',
       'shfmt',
       'biome',
+      'jsonlint',
+      'prettierd',
       eslint.mason_install,
     },
   },

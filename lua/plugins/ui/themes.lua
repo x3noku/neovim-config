@@ -45,4 +45,8 @@ return {
     'loctvl842/monokai-pro.nvim',
     lazy = true,
   },
+  {
+    'EdenEast/nightfox.nvim',
+    lazy = true,
+  },
 }

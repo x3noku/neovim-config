@@ -4,10 +4,11 @@ local bin = 'eslint_d' -- usually `eslint` works much slower
 return {
   'MunifTanjim/eslint.nvim',
 
+  bin = bin,
   mason_install = bin == 'eslint' and 'eslint-lsp' or 'eslint_d',
   mason_remove = bin ~= 'eslint' and 'eslint-lsp' or 'eslint_d',
 
-  dependencies = {
+  --[[ dependencies = {
     'nvimtools/none-ls.nvim',
     dependencies = { 'nvimtools/none-ls-extras.nvim' },
     opts = function(_, opts)
@@ -34,7 +35,7 @@ return {
         })
       end
     end,
-  },
+  }, ]]
   config = function()
     require('eslint').setup {
       bin = bin,
