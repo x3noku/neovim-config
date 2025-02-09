@@ -2,7 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     { 'nvim-treesitter/nvim-treesitter-context' },
-    { 'windwp/nvim-ts-autotag',                 event = 'InsertEnter', opts = {} },
+    { 'windwp/nvim-ts-autotag', event = 'InsertEnter', opts = {} },
   },
   build = ':TSUpdate',
   config = function()
@@ -46,5 +46,13 @@ return {
       mode = 'cursor', -- Choices: 'cursor', 'topline'
       zindex = 20,
     }
+
+    vim.filetype.add {
+      pattern = {
+        ['.*/kitty/.+%.conf'] = 'kitty',
+        ['%.env%.[%w_.-]+'] = 'sh',
+      },
+    }
+    vim.treesitter.language.register('bash', 'kitty')
   end,
 }
