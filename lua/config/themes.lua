@@ -289,18 +289,12 @@ themes[#themes + 1] = {
 }
 
 themes[#themes + 1] = {
-  name = 'Nightfox',
-  id = 'nightfox',
+  name = 'Vesper',
+  id = 'vesper',
   mode = 'dark',
   termguicolors = true,
   command = function()
-    require('monokai-pro').setup {
-      terminal_colors = false,
-      devicons = true,
-      filter = 'ristretto',
-    }
-
-    vim.cmd.colorscheme 'nightfox'
+    vim.cmd.colorscheme 'vesper'
   end,
 }
 

@@ -46,7 +46,7 @@ return {
     lazy = true,
   },
   {
-    'EdenEast/nightfox.nvim',
+    'datsfilipe/vesper.nvim',
     lazy = true,
   },
 }
