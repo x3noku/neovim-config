@@ -27,7 +27,6 @@ local function biome_or_prettier(bufnr)
   })[1]
 
   if has_biome then
-    print 'biome'
     return { 'biome' }
   end
 
@@ -47,11 +46,9 @@ local function biome_or_prettier(bufnr)
     }, { upward = true })[1]
 
   if has_prettier then
-    print 'prettierd'
     return { 'prettierd' }
   end
 
-  print 'biome'
   return { 'biome' }
 end
 
