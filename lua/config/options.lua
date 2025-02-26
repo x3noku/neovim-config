@@ -3,18 +3,18 @@ vim.g.maplocalleader = ' '
 
 -- Icons
 vim.g.iconset = 'nvim-web-devicons' -- `mini.icons` or `nvim-web-devicons`
-vim.g.wk_theme_lines = 3            -- height of whick-key theme pane
+vim.g.wk_theme_lines = 5 -- height of whick-key theme pane
 
 -- Cursor
-vim.opt.cursorline = true     -- highlight current line
-vim.opt.scrolloff = 4         -- cursor margin
-vim.opt.mouse = 'a'           -- allow mouse
+vim.opt.cursorline = true -- highlight current line
+vim.opt.scrolloff = 4 -- cursor margin
+vim.opt.mouse = 'a' -- allow mouse
 vim.opt.virtualedit = 'block' -- allow cursor to move where there is no text in visual block mode
 
 -- Enumeration
-vim.wo.number = true         -- enumeration
+vim.wo.number = true -- enumeration
 vim.wo.relativenumber = true -- relative enumeration
-vim.wo.signcolumn = 'yes'    -- extra space for diagnostic symbols
+vim.wo.signcolumn = 'yes' -- extra space for diagnostic symbols
 
 -- Folding
 vim.opt.foldcolumn = '1'
@@ -31,9 +31,9 @@ vim.opt.fillchars = {
 }
 
 -- Wrapping
-vim.wo.wrap = true         -- soft wrap text
-vim.wo.linebreak = true    -- break by special symbols
-vim.wo.list = false        -- hide trailing blank symbols
+vim.wo.wrap = true -- soft wrap text
+vim.wo.linebreak = true -- break by special symbols
+vim.wo.list = false -- hide trailing blank symbols
 vim.opt.breakindent = true -- save indent when wrapping line
 -- vim.opt.showbreak = '\\ ' -- virual symbols to show before wrapped line
 
@@ -52,12 +52,12 @@ vim.opt.completeopt = { 'menuone', 'noselect' }
 
 -- UI
 vim.opt.colorcolumn = '120' -- visual stop column width
-vim.opt.shiftwidth = 4      -- Size of an indent
-vim.opt.tabstop = 4         -- Number of spaces tabs count for
-vim.opt.expandtab = true    -- Use spaces instead of tabs
-vim.opt.pumblend = 10       -- opacity for popups
-vim.opt.pumheight = 16      -- number of entries in a popup
-vim.opt.splitright = true   -- put new windows right of current
+vim.opt.shiftwidth = 4 -- Size of an indent
+vim.opt.tabstop = 4 -- Number of spaces tabs count for
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.pumblend = 10 -- opacity for popups
+vim.opt.pumheight = 16 -- number of entries in a popup
+vim.opt.splitright = true -- put new windows right of current
 
 -- Set filetype to `bigfile` for files larger than 1.5 MB
 -- Only vim syntax will be enabled (with the correct filetype)
