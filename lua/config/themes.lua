@@ -155,6 +155,24 @@ themes[#themes + 1] = {
   end,
 }
 
+themes[#themes + 1] = {
+  name = 'GitHub Light',
+  id = 'github-light',
+  mode = 'light',
+  termguicolors = true,
+  command = function()
+    require('github-theme').setup {
+      options = {
+        inverse = {
+          visual = true,
+        },
+      },
+    }
+
+    vim.cmd.colorscheme 'github_light'
+  end,
+}
+
 -- dark themes
 themes[#themes + 1] = {
   name = 'Sonokai Andromeda',
