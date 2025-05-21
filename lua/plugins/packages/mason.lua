@@ -1,9 +1,10 @@
 local eslint = require 'plugins.lang.eslint'
 
 return {
-  'williamboman/mason.nvim',
+  'mason-org/mason.nvim',
+  version = '1.11.0',
   dependencies = {
-    { 'williamboman/mason-lspconfig.nvim', opts = {} },
+    { 'mason-org/mason-lspconfig.nvim', version = '1.32.0', opts = {} },
   },
   cmd = 'Mason',
   build = ':MasonUpdate',

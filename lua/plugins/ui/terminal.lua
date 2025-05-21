@@ -1,5 +1,6 @@
 return {
   'CRAG666/betterTerm.nvim',
+  commit = '5d3f41d9e8b3553d49764906a14e45a08dbe2308',
   config = function()
     require('betterTerm').setup {
       prefix = 'Term_',
