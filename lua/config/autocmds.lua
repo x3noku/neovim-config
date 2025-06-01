@@ -129,6 +129,15 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   end,
 })
 
+-- fix filetype for supporting json comments
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  -- group = augroup 'jsonc_filetype',
+  pattern = { 'tsconfig.json', '**/typescript/*.json' },
+  callback = function(event)
+    vim.bo[event.buf].filetype = 'jsonc'
+  end,
+})
+
 -- auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = augroup 'auto_create_dir',
@@ -150,7 +159,7 @@ vim.filetype.add {
             and path
             and vim.fn.getfsize(path) > vim.g.bigfile_size
             and 'bigfile'
-            or nil
+          or nil
       end,
     },
   },
