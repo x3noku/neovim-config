@@ -316,6 +316,22 @@ themes[#themes + 1] = {
   end,
 }
 
+themes[#themes + 1] = {
+  name = 'Vague',
+  id = 'vague',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    require('vague').setup {
+      terminal_colors = false,
+      devicons = true,
+      filter = 'ristretto',
+    }
+
+    vim.cmd.colorscheme 'vague'
+  end,
+}
+
 setup_binds()
 
 return M

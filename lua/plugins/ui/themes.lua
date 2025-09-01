@@ -54,4 +54,8 @@ return {
     'datsfilipe/vesper.nvim',
     lazy = true,
   },
+  {
+    'vague2k/vague.nvim',
+    lazy = true,
+  },
 }
