@@ -64,10 +64,26 @@ return {
       timeout_ms = 3000,
       lsp_fallback = true,
     },
+    formatters = {
+      yamlfix = {
+        env = {
+          YAMLFIX_EXPLICIT_START = false,
+          YAMLFIX_SEQUENCE_STYLE = 'keep_style',
+
+          YAMLFIX_SECTION_WHITELINES = 1,
+          YAMLFIX_WHITELINES = 1,
+
+          YAMLFIX_INDENT_MAPPING = 4,
+          YAMLFIX_INDENT_OFFSET = 2,
+          YAMLFIX_INDENT_SEQUENCE = 4,
+        },
+      },
+    },
     formatters_by_ft = {
       bash = { 'shfmt' },
       sh = { 'shfmt' },
       lua = { 'stylua' },
+      yaml = { 'yamlfix' },
 
       javascript = biome_or_prettier,
       typescript = biome_or_prettier,
@@ -81,7 +97,6 @@ return {
 
       json = biome_or_prettier,
       jsonc = biome_or_prettier,
-      yaml = biome_or_prettier,
 
       markdown = { 'biome' },
     },
