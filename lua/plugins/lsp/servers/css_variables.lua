@@ -1,5 +1,3 @@
-local lspconfig = require 'lspconfig'
-
 local M = {}
 
 ---@param _ vim.lsp.Client
@@ -44,12 +42,14 @@ local filetypes = { 'css', 'scss', 'less' }
 M.enabled = true
 
 M.setup = function(server_name, capabilities)
-  lspconfig[server_name].setup {
+  vim.lsp.config(server_name, {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = settings,
     filetypes = filetypes,
-  }
+  })
+
+  vim.lsp.enable(server_name)
 end
 
 return M

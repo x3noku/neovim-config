@@ -1,5 +1,3 @@
-local lspconfig = require 'lspconfig'
-
 local M = {}
 
 local on_attach = nil
@@ -23,13 +21,15 @@ end
 M.enabled = true
 
 M.setup = function(server_name, capabilities)
-  lspconfig[server_name].setup {
+  vim.lsp.config(server_name, {
     capabilities = capabilities,
     on_attach = on_attach,
     on_new_config = on_new_config,
     settings = settings,
     filetypes = filetypes,
-  }
+  })
+
+  vim.lsp.enable(server_name)
 end
 
 return M
