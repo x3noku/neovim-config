@@ -332,6 +332,16 @@ themes[#themes + 1] = {
   end,
 }
 
+themes[#themes + 1] = {
+  name = 'Moonfly',
+  id = 'moonfly',
+  mode = 'dark',
+  termguicolors = true,
+  command = function()
+    vim.cmd.colorscheme 'moonfly'
+  end,
+}
+
 setup_binds()
 
 return M
