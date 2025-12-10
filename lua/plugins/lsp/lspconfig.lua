@@ -2,7 +2,7 @@ return {
   'neovim/nvim-lspconfig',
   event = 'VeryLazy',
   dependencies = {
-    { 'folke/neodev.nvim',       opts = {} },
+    { 'folke/neodev.nvim', opts = {} },
     { 'smjonas/inc-rename.nvim', opts = {} },
     {
       'utilyre/barbecue.nvim',
@@ -90,6 +90,7 @@ return {
       jsonls = require 'plugins.lsp.servers.jsonls',
       lua_ls = require 'plugins.lsp.servers.lua_ls',
       prismals = require 'plugins.lsp.servers.prismals',
+      svelte = require 'plugins.lsp.servers.svelte',
       tailwindcss = require 'plugins.lsp.servers.tailwindcss',
       vtsls = require 'plugins.lsp.servers.vtsls',
     }
@@ -106,7 +107,7 @@ return {
     -- get all the servers that are available through mason-lspconfig
     local has_mason, mason_lspconfig = pcall(require, 'mason-lspconfig')
     local all_mslp_servers = has_mason and vim.tbl_keys(require('mason-lspconfig.mappings.server').lspconfig_to_package)
-        or {}
+      or {}
 
     local ensure_installed = {} ---@type string[]
     for server_name, server_opts in pairs(servers) do

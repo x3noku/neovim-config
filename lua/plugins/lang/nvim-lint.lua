@@ -1,3 +1,6 @@
+return {}
+
+--[[
 local eslint = require 'plugins.lang.eslint'
 local group = vim.api.nvim_create_augroup('lsp_lint_on_save', { clear = true })
 
@@ -37,31 +40,53 @@ end
 return {
   'mfussenegger/nvim-lint',
   event = { 'BufReadPre', 'BufNewFile' },
-  opts = {
-    linters_by_ft = {
-      bash = { 'shfmt' },
-      sh = { 'shfmt' },
-      lua = { 'stylua' },
-
-      javascript = biome_or_eslint,
-      typescript = biome_or_eslint,
-      javascriptreact = biome_or_eslint,
-      typescriptreact = biome_or_eslint,
-
-      css = biome_or_eslint,
-      scss = biome_or_eslint,
-      less = biome_or_eslint,
-      html = biome_or_eslint,
-
-      json = biome_or_eslint,
-      jsonc = biome_or_eslint,
-      yaml = biome_or_eslint,
-
-      markdown = biome_or_eslint,
-    },
-  },
+  -- opts = {
+  --   linters_by_ft = {
+  --     bash = { 'shfmt' },
+  --     sh = { 'shfmt' },
+  --     lua = { 'stylua' },
+  --
+  --     javascript = { 'biomejs' },
+  --     typescript = { 'biomejs' },
+  --     javascriptreact = { 'biomejs' },
+  --     typescriptreact = { 'biomejs' },
+  --
+  --     css = { 'biomejs' },
+  --     scss = { 'biomejs' },
+  --     less = { 'biomejs' },
+  --     html = { 'biomejs' },
+  --
+  --     json = { 'biomejs' },
+  --     jsonc = { 'biomejs' },
+  --     yaml = { 'biomejs' },
+  --
+  --     markdown = { 'biomejs' },
+  --   },
+  -- },
   config = function()
     local lint = require 'lint'
+
+    lint.linters_by_ft = {
+      bash = { 'shfmt' },
+      sh = { 'shfmt' },
+      -- lua = { 'stylua' },
+
+      javascript = { 'biomejs' },
+      typescript = { 'biomejs' },
+      javascriptreact = { 'biomejs' },
+      typescriptreact = { 'biomejs' },
+      --
+      -- css = { 'biomejs' },
+      -- scss = { 'biomejs' },
+      -- less = { 'biomejs' },
+      -- html = { 'biomejs' },
+      --
+      -- json = { 'biomejs' },
+      -- jsonc = { 'biomejs' },
+      -- yaml = { 'biomejs' },
+      --
+      -- markdown = { 'biomejs' },
+    }
 
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
       group = group,
@@ -75,3 +100,4 @@ return {
     end, { desc = '[C]ode [L]int' })
   end,
 }
+]]

@@ -3,6 +3,7 @@ return {
   dependencies = {
     { 'nvim-treesitter/nvim-treesitter-context' },
     { 'windwp/nvim-ts-autotag', event = 'InsertEnter', opts = {} },
+    { 'davidmh/mdx.nvim', config = true },
   },
   build = ':TSUpdate',
   config = function()
